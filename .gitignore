@@ -35,3 +35,30 @@ Carthage/Build
 # `pod install` in .travis.yml
 #
 # Pods/
+Example/Podfile.lock
+Example/Pods/Manifest.lock
+Example/Pods/Local Podspecs/BBAPainterDemo.podspec.json
+Example/Pods/Pods.xcodeproj/project.pbxproj
+Example/Pods/Target Support Files/BBAPainterDemo/BBAPainterDemo-dummy.m
+Example/Pods/Target Support Files/BBAPainterDemo/BBAPainterDemo-Info.plist
+Example/Pods/Target Support Files/BBAPainterDemo/BBAPainterDemo-prefix.pch
+Example/Pods/Target Support Files/BBAPainterDemo/BBAPainterDemo-umbrella.h
+Example/Pods/Target Support Files/BBAPainterDemo/BBAPainterDemo.modulemap
+Example/Pods/Target Support Files/BBAPainterDemo/BBAPainterDemo.xcconfig
+Example/Pods/Target Support Files/Pods-BBAPainterDemo_Example/Pods-BBAPainterDemo_Example-acknowledgements.markdown
+Example/Pods/Target Support Files/Pods-BBAPainterDemo_Example/Pods-BBAPainterDemo_Example-acknowledgements.plist
+Example/Pods/Target Support Files/Pods-BBAPainterDemo_Example/Pods-BBAPainterDemo_Example-dummy.m
+Example/Pods/Target Support Files/Pods-BBAPainterDemo_Example/Pods-BBAPainterDemo_Example-frameworks.sh
+Example/Pods/Target Support Files/Pods-BBAPainterDemo_Example/Pods-BBAPainterDemo_Example-Info.plist
+Example/Pods/Target Support Files/Pods-BBAPainterDemo_Example/Pods-BBAPainterDemo_Example-umbrella.h
+Example/Pods/Target Support Files/Pods-BBAPainterDemo_Example/Pods-BBAPainterDemo_Example.debug.xcconfig
+Example/Pods/Target Support Files/Pods-BBAPainterDemo_Example/Pods-BBAPainterDemo_Example.modulemap
+Example/Pods/Target Support Files/Pods-BBAPainterDemo_Example/Pods-BBAPainterDemo_Example.release.xcconfig
+Example/Pods/Target Support Files/Pods-BBAPainterDemo_Tests/Pods-BBAPainterDemo_Tests-acknowledgements.markdown
+Example/Pods/Target Support Files/Pods-BBAPainterDemo_Tests/Pods-BBAPainterDemo_Tests-acknowledgements.plist
+Example/Pods/Target Support Files/Pods-BBAPainterDemo_Tests/Pods-BBAPainterDemo_Tests-dummy.m
+Example/Pods/Target Support Files/Pods-BBAPainterDemo_Tests/Pods-BBAPainterDemo_Tests-Info.plist
+Example/Pods/Target Support Files/Pods-BBAPainterDemo_Tests/Pods-BBAPainterDemo_Tests-umbrella.h
+Example/Pods/Target Support Files/Pods-BBAPainterDemo_Tests/Pods-BBAPainterDemo_Tests.debug.xcconfig
+Example/Pods/Target Support Files/Pods-BBAPainterDemo_Tests/Pods-BBAPainterDemo_Tests.modulemap
+Example/Pods/Target Support Files/Pods-BBAPainterDemo_Tests/Pods-BBAPainterDemo_Tests.release.xcconfig
