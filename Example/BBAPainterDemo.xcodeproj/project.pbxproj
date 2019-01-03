@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B8EB2F8897938CFE044541E /* Pods_BBAPainterDemo_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF58555CCB11DD363FE84755 /* Pods_BBAPainterDemo_Tests.framework */; };
+		5E3BF5B921DE052B0092435E /* BBAPainterBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3BF5B821DE052B0092435E /* BBAPainterBaseViewController.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -38,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		1FD6DA4E36A33FBF0040C9FD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		5E3BF5B721DE052B0092435E /* BBAPainterBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterBaseViewController.h; sourceTree = "<group>"; };
+		5E3BF5B821DE052B0092435E /* BBAPainterBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterBaseViewController.m; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* BBAPainterDemo_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBAPainterDemo_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -106,6 +109,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		5E3BF5B521DE04FF0092435E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5E3BF5B621DE04FF0092435E /* Base */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		5E3BF5B621DE04FF0092435E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5E3BF5B721DE052B0092435E /* BBAPainterBaseViewController.h */,
+				5E3BF5B821DE052B0092435E /* BBAPainterBaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +163,7 @@
 		6003F593195388D20070C39A /* Example for BBAPainterDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5E3BF5B521DE04FF0092435E /* Classes */,
 				6003F59C195388D20070C39A /* BBAAppDelegate.h */,
 				6003F59D195388D20070C39A /* BBAAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -373,6 +394,7 @@
 				6003F59E195388D20070C39A /* BBAAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* BBAViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				5E3BF5B921DE052B0092435E /* BBAPainterBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
