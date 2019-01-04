@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		2B8EB2F8897938CFE044541E /* Pods_BBAPainterDemo_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF58555CCB11DD363FE84755 /* Pods_BBAPainterDemo_Tests.framework */; };
 		5E3BF5B921DE052B0092435E /* BBAPainterBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3BF5B821DE052B0092435E /* BBAPainterBaseViewController.m */; };
+		5E9BA6DD21DF2D4B00DCE9CA /* BBAPainterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9BA6DB21DF2D4B00DCE9CA /* BBAPainterListViewController.m */; };
+		5E9BA6DF21DF30BB00DCE9CA /* recommend.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E9BA6DE21DF30BA00DCE9CA /* recommend.json */; };
+		5E9BA6E221DF357400DCE9CA /* BBARecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9BA6E121DF357400DCE9CA /* BBARecommendTableViewCell.m */; };
+		5E9BA6E521DF393B00DCE9CA /* BBARecommendViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9BA6E421DF393B00DCE9CA /* BBARecommendViewModel.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -41,6 +45,13 @@
 		1FD6DA4E36A33FBF0040C9FD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		5E3BF5B721DE052B0092435E /* BBAPainterBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterBaseViewController.h; sourceTree = "<group>"; };
 		5E3BF5B821DE052B0092435E /* BBAPainterBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterBaseViewController.m; sourceTree = "<group>"; };
+		5E9BA6DA21DF2D4B00DCE9CA /* BBAPainterListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAPainterListViewController.h; sourceTree = "<group>"; };
+		5E9BA6DB21DF2D4B00DCE9CA /* BBAPainterListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAPainterListViewController.m; sourceTree = "<group>"; };
+		5E9BA6DE21DF30BA00DCE9CA /* recommend.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommend.json; sourceTree = "<group>"; };
+		5E9BA6E021DF357400DCE9CA /* BBARecommendTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBARecommendTableViewCell.h; sourceTree = "<group>"; };
+		5E9BA6E121DF357400DCE9CA /* BBARecommendTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBARecommendTableViewCell.m; sourceTree = "<group>"; };
+		5E9BA6E321DF393B00DCE9CA /* BBARecommendViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBARecommendViewModel.h; sourceTree = "<group>"; };
+		5E9BA6E421DF393B00DCE9CA /* BBARecommendViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBARecommendViewModel.m; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* BBAPainterDemo_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBAPainterDemo_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -112,6 +123,7 @@
 		5E3BF5B521DE04FF0092435E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5E9BA6D321DF2B9800DCE9CA /* List */,
 				5E3BF5B621DE04FF0092435E /* Base */,
 			);
 			path = Classes;
@@ -124,6 +136,52 @@
 				5E3BF5B821DE052B0092435E /* BBAPainterBaseViewController.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		5E9BA6D321DF2B9800DCE9CA /* List */ = {
+			isa = PBXGroup;
+			children = (
+				5E9BA6DC21DF2D4B00DCE9CA /* Model */,
+				5E9BA6D721DF2D4B00DCE9CA /* View */,
+				5E9BA6D921DF2D4B00DCE9CA /* ViewController */,
+				5E9BA6D821DF2D4B00DCE9CA /* ViewModel */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		5E9BA6D721DF2D4B00DCE9CA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5E9BA6E021DF357400DCE9CA /* BBARecommendTableViewCell.h */,
+				5E9BA6E121DF357400DCE9CA /* BBARecommendTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5E9BA6D821DF2D4B00DCE9CA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5E9BA6E321DF393B00DCE9CA /* BBARecommendViewModel.h */,
+				5E9BA6E421DF393B00DCE9CA /* BBARecommendViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5E9BA6D921DF2D4B00DCE9CA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5E9BA6DA21DF2D4B00DCE9CA /* BBAPainterListViewController.h */,
+				5E9BA6DB21DF2D4B00DCE9CA /* BBAPainterListViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5E9BA6DC21DF2D4B00DCE9CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E9BA6DE21DF30BA00DCE9CA /* recommend.json */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -266,7 +324,7 @@
 			attributes = {
 				CLASSPREFIX = BBA;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = ningliujie;
+				ORGANIZATIONNAME = Baidu;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
 						DevelopmentTeam = FERZSUK379;
@@ -304,6 +362,7 @@
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				5E9BA6DF21DF30BB00DCE9CA /* recommend.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,8 +451,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* BBAAppDelegate.m in Sources */,
+				5E9BA6DD21DF2D4B00DCE9CA /* BBAPainterListViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* BBAViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				5E9BA6E221DF357400DCE9CA /* BBARecommendTableViewCell.m in Sources */,
+				5E9BA6E521DF393B00DCE9CA /* BBARecommendViewModel.m in Sources */,
 				5E3BF5B921DE052B0092435E /* BBAPainterBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,6 +588,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BBAPainterDemo/BBAPainterDemo-Prefix.pch";
 				INFOPLIST_FILE = "BBAPainterDemo/BBAPainterDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -542,6 +605,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BBAPainterDemo/BBAPainterDemo-Prefix.pch";
 				INFOPLIST_FILE = "BBAPainterDemo/BBAPainterDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

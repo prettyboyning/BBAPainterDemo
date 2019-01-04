@@ -1,0 +1,85 @@
+{
+	"data": {
+		"app_list": [{
+			"appkey": "",
+			"name": "小游戏",
+			"icon": "https://b.bdstatic.com/searchbox/mappconsole/image/20180712/1531376287148763.png",
+			"description": "更多精彩游戏，尽在游戏大厅",
+			"schema": "baiduboxapp://v39/gamecenter/home?params=%7b%22source%22%3a%22second%22%2c+%22tab%22%3a%22recommend%22%7d+",
+			"hot_word": "",
+			"frame_type": 0,
+			"data_from": 2
+		}, {
+			"appkey": "hiUMGT8AWdvPeKHC4ynCd3VsF8OizW81",
+			"name": "首汽约车",
+			"icon": "https://b.bdstatic.com/searchbox/mappconsole/image/20180820/1534727783204376.png",
+			"description": "首汽集团旗下互联网约租车平台，为客户提供高品质网约车服务",
+			"schema": "baiduboxapp://swan/hiUMGT8AWdvPeKHC4ynCd3VsF8OizW81/?\u0026_baiduboxapp=%7B%22from%22%3A%223103%22%2C%22ext%22%3A%7B%7D%7D\u0026callback=_bdbox_js_275\u0026upgrade=0",
+			"hot_word": "",
+			"frame_type": 0,
+			"data_from": 0
+		}, {
+			"appkey": "wSB6IZyxuwsSeCGQZY44DcHBqcYCdgeb",
+			"name": "车点点",
+			"icon": "https://b.bdstatic.com/searchbox/mappconsole/image/20180927/1538017921118088.png",
+			"description": "车点点，千万车主都在用的特惠洗车神器！",
+			"schema": "baiduboxapp://swan/wSB6IZyxuwsSeCGQZY44DcHBqcYCdgeb/?\u0026_baiduboxapp=%7B%22from%22%3A%223103%22%2C%22ext%22%3A%7B%7D%7D\u0026callback=_bdbox_js_275\u0026upgrade=0",
+			"hot_word": "",
+			"frame_type": 0,
+			"data_from": 0
+		}, {
+			"appkey": "GSvrwpHPNQYr0cQtaPVBTHv58bxwhcz2",
+			"name": "码上挪车",
+			"icon": "https://b.bdstatic.com/searchbox/mappconsole/image/20180615/1529064619-25098.png",
+			"description": "帮助车主通过手机扫描二维码挪车，无需泄露用户手机号。",
+			"schema": "baiduboxapp://swan/GSvrwpHPNQYr0cQtaPVBTHv58bxwhcz2/?\u0026_baiduboxapp=%7B%22from%22%3A%223103%22%2C%22ext%22%3A%7B%7D%7D\u0026callback=_bdbox_js_275\u0026upgrade=0",
+			"hot_word": "",
+			"frame_type": 0,
+			"data_from": 0
+		}, {
+			"appkey": "iFeiFsLMpsBC33To70DdmFBnUqdMThdG",
+			"name": "齐车大圣违章查询",
+			"icon": "https://b.bdstatic.com/searchbox/mappconsole/image/20180917/1537156137-12051.png",
+			"description": "为用户进行违章的查询和违法缴费的代缴。",
+			"schema": "baiduboxapp://swan/iFeiFsLMpsBC33To70DdmFBnUqdMThdG/?\u0026_baiduboxapp=%7B%22from%22%3A%223103%22%2C%22ext%22%3A%7B%7D%7D\u0026callback=_bdbox_js_275\u0026upgrade=0",
+			"hot_word": "",
+			"frame_type": 0,
+			"data_from": 0
+		}, {
+			"appkey": "S6hwvsSap4Thejcns6MuFYnXPBmSxt8B",
+			"name": "汽车之家违章查询",
+			"icon": "https://b.bdstatic.com/searchbox/mappconsole/image/20180905/1536130603104650.png",
+			"description": "汽车之家官方出品，随时查询车辆违章；支持300多个城市。",
+			"schema": "baiduboxapp://swan/S6hwvsSap4Thejcns6MuFYnXPBmSxt8B/?\u0026_baiduboxapp=%7B%22from%22%3A%223103%22%2C%22ext%22%3A%7B%7D%7D\u0026callback=_bdbox_js_275\u0026upgrade=0",
+			"hot_word": "",
+			"frame_type": 0,
+			"data_from": 0
+		}],
+		"pic_list": [{
+			"bid": "1000001013",
+			"picture": "https://hiphotos.baidu.com/fex/%70%69%63/item/f2deb48f8c5494ee0abfb78b20f5e0fe98257e87.jpg",
+			"schema": "baiduboxapp://swan/GzeN9cN8HLYksfxA9vPjVwnKxuCdddUr/pages/home/index/?_baiduboxapp=%7B%22from%22%3A%221211004710076000%22%2C%22ext%22%3A%7B%7D%7D\u0026callback=_bdbox_js_275\u0026upgrade=0",
+			"description": "",
+			"data_from": 0
+		}],
+		"sext": {
+			"app_ext": {
+				"log_id": 1546582085166370766,
+				"pos": "POS_2L_APP_IOS",
+				"data_source": 0,
+				"rec_ext_log": ""
+			},
+			"banner_ext": {
+				"log_id": 1546582085166366355,
+				"pos": "POS_2L_BANNER_IOS",
+				"data_source": 0,
+				"rec_ext_log": ""
+			}
+		},
+		"title": "大家都在用"
+	},
+	"errmsg": "succ",
+	"errno": "0",
+	"request_id": "0485146660",
+	"tipmsg": ""
+}
