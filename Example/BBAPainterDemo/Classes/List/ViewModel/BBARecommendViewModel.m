@@ -12,6 +12,12 @@
 @implementation BBARecommendViewModel
 
 
+#pragma mark - BBABaseViewModelNetworkRequestProtocol
+
+- (void)reloadDataWithParams:(NSDictionary *)params completion:(BBAPrelayoutCompletionBlock)completion {
+    
+}
+
 #pragma mark - setter & getter
 
 - (NSMutableArray *)dataArray {

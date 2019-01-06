@@ -30,12 +30,21 @@ UITableViewDataSource>
     [super viewDidLoad];
     
     [self setupView];
+    [self loadNetworkRequestData];
 }
+
+#pragma mark - private
 
 - (void)setupView {
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     self.viewModel = [[BBARecommendViewModel alloc] init];
+}
+
+- (void)loadNetworkRequestData {
+    [self.viewModel reloadDataWithParams:nil completion:^(NSArray *cellLayouts, NSError *error) {
+        
+    }];
 }
 
 #pragma mark - UITableViewDataSource
