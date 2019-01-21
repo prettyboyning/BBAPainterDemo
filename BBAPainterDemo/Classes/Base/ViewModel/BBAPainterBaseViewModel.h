@@ -1,18 +1,36 @@
 //
-//  BBABaseViewModel.h
+//  BBAPainterBaseViewModel.h
 //  BBAPainterDemo
 //
-//  Created by Ning,Liujie on 2019/1/4.
+//  Created by Ning,Liujie on 2019/1/17.
 //
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
+@class BBAPainterResultSet;
+
 typedef void(^BBAPrelayoutCompletionBlock)(NSArray *cellLayouts, NSError *error);
+typedef void (^BBAEngineLoadCompletion)(BBAPainterResultSet *resultSet, NSError *error);
 typedef void(^BBASafeInvokeBlock)(void);
 
-@protocol  BBABaseViewModelNetworkRequestProtocol <NSObject>
+typedef NS_ENUM(NSUInteger, BBARefreshLoadStatus) {
+    BBARefreshLoadStatusUnload,     // 未载入状态
+    BBARefreshLoadStatusLoading,    // 网络载入中
+    BBARefreshLoadStatusLoaded,     // 网络载入完成
+};
 
-@optional
+@interface BBAPainterBaseViewModel : NSObject {
+    BBARefreshLoadStatus _loadState;
+}
+
+/// 网络请求返回的错误
+@property (nonatomic, strong, readonly) NSError *error;
+
+/// 网络加载状态
+@property (nonatomic, assign, readonly) BBARefreshLoadStatus loadState;
+
 /**
  * 根据指定参数对业务数据进行重载
  * 我们把网络请求、磁盘等本地数据读取均定义到数据层。
@@ -24,19 +42,20 @@ typedef void(^BBASafeInvokeBlock)(void);
  */
 - (void)reloadDataWithParams:(NSDictionary *)params completion:(BBAPrelayoutCompletionBlock)completion;
 
-@end
+/**
+ * @brief 子类覆盖重写，发起请求
+ *
+ * @param params 网络请求参数
+ * @param completion 请求完成的回调block,该block返回(BBAEngineLoadCompletion *resultSet, NSError *error)
+ *
+ */
+- (void)reloadDataResultWithParams:(NSDictionary *)params completion:(BBAEngineLoadCompletion)completion;
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface BBABaseViewModel : NSObject <BBABaseViewModelNetworkRequestProtocol>
-
-/// 网络请求返回的错误
-@property (nonatomic, strong, readonly) NSError *error;
 
 @end
 
 /// 安全调用
-@interface BBABaseViewModel (SafeInvoke)
+@interface BBAPainterBaseViewModel (SafeInvoke)
 
 /**
  *  @brief  同步安全调用

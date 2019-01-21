@@ -6,11 +6,11 @@
 //  Copyright © 2019年 Baidu. All rights reserved.
 //
 
-#import "BBABaseViewModel.h"
+#import "BBAPainterBaseViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BBARecommendViewModel : BBABaseViewModel
+@interface BBARecommendViewModel : BBAPainterBaseViewModel
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
 

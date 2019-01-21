@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2B8EB2F8897938CFE044541E /* Pods_BBAPainterDemo_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF58555CCB11DD363FE84755 /* Pods_BBAPainterDemo_Tests.framework */; };
+		5E0335C321F17298001A090C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0335C221F17297001A090C /* Main.storyboard */; };
+		5E0335C521F172D8001A090C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0335C421F172D8001A090C /* LaunchScreen.storyboard */; };
 		5E3BF5B921DE052B0092435E /* BBAPainterBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3BF5B821DE052B0092435E /* BBAPainterBaseViewController.m */; };
 		5E9BA6DD21DF2D4B00DCE9CA /* BBAPainterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9BA6DB21DF2D4B00DCE9CA /* BBAPainterListViewController.m */; };
 		5E9BA6DF21DF30BB00DCE9CA /* recommend.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E9BA6DE21DF30BA00DCE9CA /* recommend.json */; };
 		5E9BA6E221DF357400DCE9CA /* BBARecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9BA6E121DF357400DCE9CA /* BBARecommendTableViewCell.m */; };
 		5E9BA6E521DF393B00DCE9CA /* BBARecommendViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9BA6E421DF393B00DCE9CA /* BBARecommendViewModel.m */; };
+		5EFC1FC021F5FF8C00F01D91 /* BBAPainterRecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFC1FBF21F5FF8C00F01D91 /* BBAPainterRecommendModel.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -26,8 +29,6 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
-		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		F520DBCE71084B78A75BDC5C /* Pods_BBAPainterDemo_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AC44F0DF3D019D6A288492 /* Pods_BBAPainterDemo_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		1FD6DA4E36A33FBF0040C9FD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		5E0335C221F17297001A090C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5E0335C421F172D8001A090C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E3BF5B721DE052B0092435E /* BBAPainterBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterBaseViewController.h; sourceTree = "<group>"; };
 		5E3BF5B821DE052B0092435E /* BBAPainterBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterBaseViewController.m; sourceTree = "<group>"; };
 		5E9BA6DA21DF2D4B00DCE9CA /* BBAPainterListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAPainterListViewController.h; sourceTree = "<group>"; };
@@ -52,6 +55,8 @@
 		5E9BA6E121DF357400DCE9CA /* BBARecommendTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBARecommendTableViewCell.m; sourceTree = "<group>"; };
 		5E9BA6E321DF393B00DCE9CA /* BBARecommendViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBARecommendViewModel.h; sourceTree = "<group>"; };
 		5E9BA6E421DF393B00DCE9CA /* BBARecommendViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBARecommendViewModel.m; sourceTree = "<group>"; };
+		5EFC1FBE21F5FF8C00F01D91 /* BBAPainterRecommendModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterRecommendModel.h; sourceTree = "<group>"; };
+		5EFC1FBF21F5FF8C00F01D91 /* BBAPainterRecommendModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterRecommendModel.m; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* BBAPainterDemo_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBAPainterDemo_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -72,11 +77,9 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		69038A72AABB9EC7D191C8E5 /* Pods-BBAPainterDemo_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBAPainterDemo_Example.release.xcconfig"; path = "Target Support Files/Pods-BBAPainterDemo_Example/Pods-BBAPainterDemo_Example.release.xcconfig"; sourceTree = "<group>"; };
-		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		746A5E144505E8F243DD5F2A /* Pods-BBAPainterDemo_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBAPainterDemo_Example.debug.xcconfig"; path = "Target Support Files/Pods-BBAPainterDemo_Example/Pods-BBAPainterDemo_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		78E8B5482A4AA67717D0264B /* Pods-BBAPainterDemo_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBAPainterDemo_Tests.debug.xcconfig"; path = "Target Support Files/Pods-BBAPainterDemo_Tests/Pods-BBAPainterDemo_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		7CDD44635BFDE659C740D2AA /* BBAPainterDemo.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BBAPainterDemo.podspec; path = ../BBAPainterDemo.podspec; sourceTree = "<group>"; };
-		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7CDD44635BFDE659C740D2AA /* BBAPainterDemo.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BBAPainterDemo.podspec; path = ../BBAPainterDemo.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E4AC44F0DF3D019D6A288492 /* Pods_BBAPainterDemo_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BBAPainterDemo_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB6910811BDE44EA8ACA4E3D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		ECF8AEF04944965A621395AE /* Pods-BBAPainterDemo_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBAPainterDemo_Tests.release.xcconfig"; path = "Target Support Files/Pods-BBAPainterDemo_Tests/Pods-BBAPainterDemo_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				5E9BA6DE21DF30BA00DCE9CA /* recommend.json */,
+				5EFC1FBE21F5FF8C00F01D91 /* BBAPainterRecommendModel.h */,
+				5EFC1FBF21F5FF8C00F01D91 /* BBAPainterRecommendModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -224,11 +229,11 @@
 				5E3BF5B521DE04FF0092435E /* Classes */,
 				6003F59C195388D20070C39A /* BBAAppDelegate.h */,
 				6003F59D195388D20070C39A /* BBAAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* BBAViewController.h */,
 				6003F5A6195388D20070C39A /* BBAViewController.m */,
-				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
+				5E0335C221F17297001A090C /* Main.storyboard */,
+				5E0335C421F172D8001A090C /* LaunchScreen.storyboard */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for BBAPainterDemo";
@@ -358,11 +363,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
-				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				5E9BA6DF21DF30BB00DCE9CA /* recommend.json in Resources */,
+				5E0335C521F172D8001A090C /* LaunchScreen.storyboard in Resources */,
+				5E0335C321F17298001A090C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EFC1FC021F5FF8C00F01D91 /* BBAPainterRecommendModel.m in Sources */,
 				6003F59E195388D20070C39A /* BBAAppDelegate.m in Sources */,
 				5E9BA6DD21DF2D4B00DCE9CA /* BBAPainterListViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* BBAViewController.m in Sources */,
@@ -493,14 +499,6 @@
 				6003F5B9195388D20070C39A /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				71719F9E1E33DC2100824A3D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

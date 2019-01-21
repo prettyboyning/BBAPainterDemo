@@ -42,7 +42,7 @@ UITableViewDataSource>
 }
 
 - (void)loadNetworkRequestData {
-    [self.viewModel reloadDataWithParams:nil completion:^(NSArray *cellLayouts, NSError *error) {
+    [self.viewModel reloadDataWithParams:@{} completion:^(NSArray *cellLayouts, NSError *error) {
         
     }];
 }

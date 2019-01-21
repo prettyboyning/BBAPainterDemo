@@ -8,6 +8,8 @@
 
 #import "BBAPainterBaseViewController.h"
 
+#import "BBARecommendViewModel.h"
+
 @interface BBAPainterBaseViewController ()<UITextFieldDelegate,UITextViewDelegate>
 {
     PainterDemoBasicRow _rowStyle;
@@ -53,7 +55,10 @@
 #pragma mark - private
 
 - (void)painaterDemoBasicUse {
-    
+    BBARecommendViewModel *viewModel = [BBARecommendViewModel new];
+    [viewModel reloadDataWithParams:@{} completion:^(NSArray *cellLayouts, NSError *error) {
+        
+    }];
 }
 
 @end

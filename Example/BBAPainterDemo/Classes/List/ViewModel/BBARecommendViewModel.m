@@ -11,12 +11,19 @@
 
 @implementation BBARecommendViewModel
 
-
-#pragma mark - BBABaseViewModelNetworkRequestProtocol
-
-- (void)reloadDataWithParams:(NSDictionary *)params completion:(BBAPrelayoutCompletionBlock)completion {
+- (void)reloadDataResultWithParams:(NSDictionary *)params completion:(BBAEngineLoadCompletion)completion {
+    if (_loadState == BBARefreshLoadStatusLoading) {
+        return;
+    }
     
+    _loadState = BBARefreshLoadStatusLoading;
+    NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"recommend.json" ofType:nil]];
+    NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSArray *appList = [[dictionary objectForKey:@"data"] objectForKey:@"app_list"];
+    NSLog(@"%@", appList);
+    _loadState = BBARefreshLoadStatusLoaded;
 }
+
 
 #pragma mark - setter & getter
 

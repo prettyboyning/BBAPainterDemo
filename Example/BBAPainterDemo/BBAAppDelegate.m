@@ -7,12 +7,16 @@
 //
 
 #import "BBAAppDelegate.h"
+#import "BBAPainterBaseViewController.h"
 
 @implementation BBAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    BBAPainterBaseViewController *examplesViewController = [[BBAPainterBaseViewController alloc] initWithStyle:0];
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:examplesViewController];
+    self.window.rootViewController = navVC;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
