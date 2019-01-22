@@ -45,6 +45,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 是否需要动画延时
 @property (nonatomic, assign) BOOL  isNeedDelay;
 
+- (void)setValueWithDict:(NSDictionary *)dict;
+
 @end
 
 NS_ASSUME_NONNULL_END

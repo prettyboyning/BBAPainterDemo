@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BBARecommendViewModel : BBAPainterBaseViewModel
 
-@property (nonatomic, strong) NSMutableArray *dataArray;
 
 @end
 

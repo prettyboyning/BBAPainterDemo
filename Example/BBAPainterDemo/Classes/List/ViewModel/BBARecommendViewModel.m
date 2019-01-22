@@ -7,7 +7,8 @@
 //
 
 #import "BBARecommendViewModel.h"
-
+#import "BBAPainterRecommendModel.h"
+#import "BBAPainterResultSet.h"
 
 @implementation BBARecommendViewModel
 
@@ -20,18 +21,17 @@
     NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"recommend.json" ofType:nil]];
     NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     NSArray *appList = [[dictionary objectForKey:@"data"] objectForKey:@"app_list"];
-    NSLog(@"%@", appList);
-    _loadState = BBARefreshLoadStatusLoaded;
-}
-
-
-#pragma mark - setter & getter
-
-- (NSMutableArray *)dataArray {
-    if (!_dataArray) {
-        _dataArray = [NSMutableArray array];
+    NSMutableArray *result = [NSMutableArray array];
+    [appList enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        BBAPainterRecommendModel *model = [BBAPainterRecommendModel new];
+        [model setValueWithDict:obj];
+        [result addObject:model];
+    }];
+    [_resultSet addItems:result];
+    if (completion) {
+        completion(_resultSet, nil);
     }
-    return _dataArray;
+    _loadState = BBARefreshLoadStatusLoaded;
 }
 
 @end

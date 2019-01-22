@@ -7,8 +7,6 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @class BBAPainterResultSet;
 
 typedef void(^BBAPrelayoutCompletionBlock)(NSArray *cellLayouts, NSError *error);
@@ -21,15 +19,30 @@ typedef NS_ENUM(NSUInteger, BBARefreshLoadStatus) {
     BBARefreshLoadStatusLoaded,     // 网络载入完成
 };
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface BBAPainterBaseViewModel : NSObject {
     BBARefreshLoadStatus _loadState;
+    BBAPainterResultSet *_resultSet;
+@protected
+    NSMutableArray *_arrayLayouts;
 }
 
 /// 网络请求返回的错误
 @property (nonatomic, strong, readonly) NSError *error;
-
 /// 网络加载状态
 @property (nonatomic, assign, readonly) BBARefreshLoadStatus loadState;
+/// 业务列表数据、是否有下一页、当前处于第几页的封装，适用于流式列表结构
+@property (nonatomic, strong, readonly) BBAPainterResultSet *resultSet;
+// 预排版结果，该数组内装的对象均为排版结果
+// 对于该数组的增删改查务必要使用BBABaseViewModel (Operation)中的方式由业务数据驱动
+// 排版模型和业务模型的关联关系如下图所示:
+//
+//  |-------------|  ---weak---->   |---------------|
+//  | LayoutModel |                 | BusinessModel |
+//  |-------------|  <——strong——    |---------------|
+//
+@property (nonatomic, strong, readonly) NSMutableArray  *arrayLayouts;
 
 /**
  * 根据指定参数对业务数据进行重载
