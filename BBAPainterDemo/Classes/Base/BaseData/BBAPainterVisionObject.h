@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 视觉元素的位置、大小
 @property (nonatomic, assign) CGRect frame;
 
-// 视觉元素的展示内容，多数情况下，value即是WMMutableAttributedItem
+// 视觉元素的展示内容，多数情况下，value即是BBAPainterMutableAttributedItem
 @property (nonatomic, strong, nullable) id value;
 
 
