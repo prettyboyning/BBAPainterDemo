@@ -9,4 +9,10 @@
 
 @implementation BBAPainterBaseModel
 
+@synthesize cellData;
+
+- (void)setNeedsUpdateUIData {
+    self.cellData = nil;
+}
+
 @end

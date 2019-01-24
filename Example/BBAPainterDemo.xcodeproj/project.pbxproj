@@ -15,6 +15,7 @@
 		5E9BA6DF21DF30BB00DCE9CA /* recommend.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E9BA6DE21DF30BA00DCE9CA /* recommend.json */; };
 		5E9BA6E221DF357400DCE9CA /* BBARecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9BA6E121DF357400DCE9CA /* BBARecommendTableViewCell.m */; };
 		5E9BA6E521DF393B00DCE9CA /* BBARecommendViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9BA6E421DF393B00DCE9CA /* BBARecommendViewModel.m */; };
+		5ED0FFAF21F8994E0083DE5E /* BBAPainterRecommendCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED0FFAE21F8994E0083DE5E /* BBAPainterRecommendCellData.m */; };
 		5EFC1FC021F5FF8C00F01D91 /* BBAPainterRecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFC1FBF21F5FF8C00F01D91 /* BBAPainterRecommendModel.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -55,6 +56,8 @@
 		5E9BA6E121DF357400DCE9CA /* BBARecommendTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBARecommendTableViewCell.m; sourceTree = "<group>"; };
 		5E9BA6E321DF393B00DCE9CA /* BBARecommendViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBARecommendViewModel.h; sourceTree = "<group>"; };
 		5E9BA6E421DF393B00DCE9CA /* BBARecommendViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBARecommendViewModel.m; sourceTree = "<group>"; };
+		5ED0FFAD21F8994E0083DE5E /* BBAPainterRecommendCellData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterRecommendCellData.h; sourceTree = "<group>"; };
+		5ED0FFAE21F8994E0083DE5E /* BBAPainterRecommendCellData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterRecommendCellData.m; sourceTree = "<group>"; };
 		5EFC1FBE21F5FF8C00F01D91 /* BBAPainterRecommendModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterRecommendModel.h; sourceTree = "<group>"; };
 		5EFC1FBF21F5FF8C00F01D91 /* BBAPainterRecommendModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterRecommendModel.m; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* BBAPainterDemo_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBAPainterDemo_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +147,7 @@
 		5E9BA6D321DF2B9800DCE9CA /* List */ = {
 			isa = PBXGroup;
 			children = (
+				5ED0FFAC21F899270083DE5E /* CellData */,
 				5E9BA6DC21DF2D4B00DCE9CA /* Model */,
 				5E9BA6D721DF2D4B00DCE9CA /* View */,
 				5E9BA6D921DF2D4B00DCE9CA /* ViewController */,
@@ -187,6 +191,15 @@
 				5EFC1FBF21F5FF8C00F01D91 /* BBAPainterRecommendModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5ED0FFAC21F899270083DE5E /* CellData */ = {
+			isa = PBXGroup;
+			children = (
+				5ED0FFAD21F8994E0083DE5E /* BBAPainterRecommendCellData.h */,
+				5ED0FFAE21F8994E0083DE5E /* BBAPainterRecommendCellData.m */,
+			);
+			path = CellData;
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -458,6 +471,7 @@
 				5EFC1FC021F5FF8C00F01D91 /* BBAPainterRecommendModel.m in Sources */,
 				6003F59E195388D20070C39A /* BBAAppDelegate.m in Sources */,
 				5E9BA6DD21DF2D4B00DCE9CA /* BBAPainterListViewController.m in Sources */,
+				5ED0FFAF21F8994E0083DE5E /* BBAPainterRecommendCellData.m in Sources */,
 				6003F5A7195388D20070C39A /* BBAViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				5E9BA6E221DF357400DCE9CA /* BBARecommendTableViewCell.m in Sources */,

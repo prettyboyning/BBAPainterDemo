@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class BBAPainterResultSet;
+@class BBAPainterResultSet, BBAPainterBaseCellData;
 
 typedef void(^BBAPrelayoutCompletionBlock)(NSArray *cellLayouts, NSError *error);
 typedef void (^BBAEngineLoadCompletion)(BBAPainterResultSet *resultSet, NSError *error);
@@ -43,6 +43,18 @@ NS_ASSUME_NONNULL_BEGIN
 //  |-------------|  <——strong——    |---------------|
 //
 @property (nonatomic, strong, readonly) NSMutableArray  *arrayLayouts;
+
+/**
+ * UI数据生成的单元方法，该方法会根据业务数据模型刷新出其对应的UI数据
+ * 一般情况下，我们需要通过子类集成的方式覆写该方法实现
+ * 注意：该方法会在多线程环境调用，注意保证线程安全
+ *
+ * @param item 一条业务数据，这里的WMGBusinessModel是网络数据模型的一个抽象类,可根据业务实际进行改造.
+ *
+ * @return WMGBaseCellData 列表场景下的抽象UI数据，亦即排版模型
+ */
+
+- (BBAPainterBaseCellData *)refreshCellDataWithMetaData:(BBAPainterBaseCellData *)item;
 
 /**
  * 根据指定参数对业务数据进行重载

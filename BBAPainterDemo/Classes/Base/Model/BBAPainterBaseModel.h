@@ -6,10 +6,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BBAPainterClientData.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BBAPainterBaseModel : NSObject
+@interface BBAPainterBaseModel : NSObject <BBAPainterClientData>
 
 @end
 

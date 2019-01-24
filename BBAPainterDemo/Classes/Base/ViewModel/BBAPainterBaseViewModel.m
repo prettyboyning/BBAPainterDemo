@@ -7,6 +7,8 @@
 
 #import "BBAPainterBaseViewModel.h"
 #import "BBAPainterResultSet.h"
+#import "BBAPainterBaseCellData.h"
+#import "BBAPainterBaseModel.h"
 
 @interface BBAPainterBaseViewModel () {
     dispatch_queue_t prelayout_queue;
@@ -55,6 +57,12 @@
     // 父类统一处理，否则子类覆盖
 }
 
+- (BBAPainterBaseCellData *)refreshCellDataWithMetaData:(BBAPainterBaseModel *)item {
+    // override to subclass
+    BBAPainterBaseCellData *cellData = [[BBAPainterBaseCellData alloc] init];
+    return cellData;
+}
+
 #pragma mark - Private
 
 - (void)_handleNetworkResult:(BBAPainterResultSet *)resultSet error:(NSError *)error completion:(BBAPrelayoutCompletionBlock)completion {
@@ -79,18 +87,18 @@
 
 - (void)_refreshModelWithResultSet:(BBAPainterResultSet *)resultSet correspondingLayouts:(NSMutableArray *)layouts {
     for (BBAPainterBaseModel *item in resultSet.items) {
-
-        //生成视图数据
-//        if (item.cellData == nil) {
+        
+        // 生成视图数据
+        if (item.cellData == nil) {
 //            //创建缓存
-//            WMGBaseCellData *cellData = [self refreshCellDataWithMetaData:item];
-//            cellData.metaData = item;
+            BBAPainterBaseCellData *cellData = [self refreshCellDataWithMetaData:item];
+            cellData.metaData = item;
 //
-//            item.cellData = cellData;
-//        }
+            item.cellData = cellData;
+        }
 //
 //        //入队
-//        [layouts addObject:item.cellData];
+        [layouts addObject:item.cellData];
     }
 }
 

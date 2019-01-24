@@ -9,6 +9,7 @@
 #import "BBARecommendViewModel.h"
 #import "BBAPainterRecommendModel.h"
 #import "BBAPainterResultSet.h"
+#import "BBAPainterRecommendCellData.h"
 
 @implementation BBARecommendViewModel
 
@@ -32,6 +33,12 @@
         completion(_resultSet, nil);
     }
     _loadState = BBARefreshLoadStatusLoaded;
+}
+
+- (BBAPainterBaseCellData *)refreshCellDataWithMetaData:(BBAPainterBaseCellData *)item {
+    BBAPainterRecommendCellData *cellData = [BBAPainterRecommendCellData new];
+    
+    return cellData;
 }
 
 @end
