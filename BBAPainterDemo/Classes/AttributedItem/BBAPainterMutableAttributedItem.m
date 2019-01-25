@@ -35,4 +35,8 @@
     return self;
 }
 
+- (NSAttributedString *)resultString {
+    return _textStorage.copy;
+}
+
 @end
