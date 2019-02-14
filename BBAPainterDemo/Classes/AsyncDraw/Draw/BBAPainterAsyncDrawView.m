@@ -233,6 +233,7 @@ static BOOL _globalAsyncDrawDisabled = NO;
         }
         
         dispatch_async([self drawQueue], drawBlock);
+        
     }
     else
     {
