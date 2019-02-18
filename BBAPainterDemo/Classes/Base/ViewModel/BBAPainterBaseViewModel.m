@@ -11,10 +11,14 @@
 #import "BBAPainterBaseModel.h"
 
 @interface BBAPainterBaseViewModel () {
-    dispatch_queue_t prelayout_queue;
+//    dispatch_queue_t prelayout_queue;
 }
 
 @property (nonatomic, strong) NSError *error;
+
+@property(nonatomic, strong) dispatch_queue_t prelayout_queue;
+
+@property (nonatomic, strong) NSMutableArray  *arrayLayouts;
 
 @end
 
@@ -30,7 +34,7 @@
         _resultSet = [BBAPainterResultSet new];
         _arrayLayouts = [NSMutableArray array];
         const char *queue_name = [[NSString stringWithFormat:@"%@_prelayout_queue", [self class]] cStringUsingEncoding:NSUTF8StringEncoding];
-        prelayout_queue = dispatch_queue_create(queue_name, DISPATCH_QUEUE_SERIAL);
+        _prelayout_queue = dispatch_queue_create(queue_name, DISPATCH_QUEUE_SERIAL);
         
     }
     return self;
@@ -46,9 +50,7 @@
     _error = nil;
     [self bba_async_safe_invoke:^{
         [self reloadDataResultWithParams:@{} completion:^(BBAPainterResultSet * _Nonnull resultSet, NSError * _Nonnull error) {
-            [self _handleNetworkResult:resultSet error:error completion:^(NSArray *cellLayouts, NSError *error) {
-                
-            }];
+            [self _handleNetworkResult:resultSet error:error completion:completion];
         }];
     }];
 }
@@ -102,22 +104,19 @@
     }
 }
 
-@end
-
-@implementation BBAPainterBaseViewModel (SafeInvoke)
-
 - (void)bba_safe_invoke:(BBASafeInvokeBlock)block {
     if (block == NULL) return;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    if (dispatch_get_current_queue() == prelayout_queue) assert(0);
+    if (dispatch_get_current_queue() == _prelayout_queue) assert(0);
 #pragma clang diagnostic pop
-    dispatch_async(prelayout_queue, block);
+    dispatch_async(_prelayout_queue, block);
 }
 
 - (void)bba_async_safe_invoke:(BBASafeInvokeBlock)block {
     if (block == NULL) return;
-    dispatch_async(prelayout_queue, block);
+    
+    dispatch_async(_prelayout_queue, block);
 }
 
 @end

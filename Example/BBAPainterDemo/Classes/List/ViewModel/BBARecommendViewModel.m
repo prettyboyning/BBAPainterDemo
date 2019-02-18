@@ -35,8 +35,18 @@
     _loadState = BBARefreshLoadStatusLoaded;
 }
 
-- (BBAPainterBaseCellData *)refreshCellDataWithMetaData:(BBAPainterBaseCellData *)item {
+- (BBAPainterBaseCellData *)refreshCellDataWithMetaData:(BBAPainterBaseModel *)item {
     BBAPainterRecommendCellData *cellData = [BBAPainterRecommendCellData new];
+    if ([item isKindOfClass:[BBAPainterRecommendModel class]]) {
+        BBAPainterRecommendModel *itemModel = (BBAPainterRecommendModel*)item;
+        NSMutableAttributedString *nameAttributed = [[NSMutableAttributedString alloc] initWithString:@"开关关键是两个就饿了就"];
+        [nameAttributed addAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12], NSForegroundColorAttributeName:[UIColor blackColor]} range:NSMakeRange(0, nameAttributed.string.length)];
+        cellData.name = nameAttributed.copy;
+        
+        NSMutableAttributedString *desAttributed = [[NSMutableAttributedString alloc] initWithString:@"开关关键是两个就饿了就"];
+        [desAttributed addAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12], NSForegroundColorAttributeName:[UIColor blackColor]} range:NSMakeRange(0, desAttributed.string.length)];
+        cellData.descriptionText = desAttributed.copy;
+    }
     
     return cellData;
 }

@@ -1,12 +1,12 @@
 //
-//  BBAViewController.m
-//  BBAPainterDemo
+//  BBAPainterHomeViewController.m
+//  BBAPainterDemo_Example
 //
-//  Created by ningliujie on 01/02/2019.
-//  Copyright (c) 2019 ningliujie. All rights reserved.
+//  Created by Ning,Liujie on 2019/2/18.
+//  Copyright © 2019年 Baidu. All rights reserved.
 //
 
-#import "BBAViewController.h"
+#import "BBAPainterHomeViewController.h"
 #import "BBAPainterBaseViewController.h"
 #import "BBAPainterListViewController.h"
 
@@ -21,17 +21,18 @@ typedef NS_ENUM(NSInteger, PainterDemoListRow) {
 };
 
 
-@interface BBAViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface BBAPainterHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataSource;
 @end
 
-@implementation BBAViewController
+@implementation BBAPainterHomeViewController
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
+    
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title =  @"Examples";
     
@@ -64,11 +65,11 @@ typedef NS_ENUM(NSInteger, PainterDemoListRow) {
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 25)];
-//    view.backgroundColor = WMGHEXCOLOR(0xF4F4F4);
+    //    view.backgroundColor = WMGHEXCOLOR(0xF4F4F4);
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, self.view.frame.size.width - 30, 25)];
     label.backgroundColor = [UIColor clearColor];
-//    label.textColor = WMGHEXCOLOR(0x333333);
+    //    label.textColor = WMGHEXCOLOR(0x333333);
     label.font = [UIFont systemFontOfSize:14];
     label.text = (section == 0) ? @"基本使用" : @"列表示例";
     
@@ -93,20 +94,20 @@ typedef NS_ENUM(NSInteger, PainterDemoListRow) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:PainterKey];
     }
     cell.textLabel.text = text;
-//    WMGBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:PainterKey];
-//    if (cell == nil) {
-//        cell = [[WMGBaseCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:PainterKey];
-//        cell.textLabel.textColor = WMGHEXCOLOR(0x333333);
-//        cell.textLabel.font = [UIFont systemFontOfSize:18];
-//    }
-//    cell.textLabel.text = text;
-//    cell.textLabel.textAlignment = NSTextAlignmentCenter;
-//
-//    WMGBaseCellData *data = [[WMGBaseCellData alloc] init];
-//    data.cellWidth = self.view.frame.size.width;
-//    data.cellHeight = 60;
-//    data.separatorStyle = WMGCellSeparatorLineStyleLeftPadding;
-//    [cell setupCellData:data];
+    //    WMGBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:PainterKey];
+    //    if (cell == nil) {
+    //        cell = [[WMGBaseCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:PainterKey];
+    //        cell.textLabel.textColor = WMGHEXCOLOR(0x333333);
+    //        cell.textLabel.font = [UIFont systemFontOfSize:18];
+    //    }
+    //    cell.textLabel.text = text;
+    //    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    //
+    //    WMGBaseCellData *data = [[WMGBaseCellData alloc] init];
+    //    data.cellWidth = self.view.frame.size.width;
+    //    data.cellHeight = 60;
+    //    data.separatorStyle = WMGCellSeparatorLineStyleLeftPadding;
+    //    [cell setupCellData:data];
     
     return cell;
 }
@@ -124,10 +125,10 @@ typedef NS_ENUM(NSInteger, PainterDemoListRow) {
             BBAPainterListViewController *resturantVC = [[BBAPainterListViewController alloc] init];
             [self.navigationController pushViewController:resturantVC animated:YES];
         }
-//        else if (indexPath.row == PainterDemoListRow_OrderList){
-//            DemoOrderListViewController *orderVC = [[DemoOrderListViewController alloc] init];
-//            [self.navigationController pushViewController:orderVC animated:YES];
-//        }
+        //        else if (indexPath.row == PainterDemoListRow_OrderList){
+        //            DemoOrderListViewController *orderVC = [[DemoOrderListViewController alloc] init];
+        //            [self.navigationController pushViewController:orderVC animated:YES];
+        //        }
     }
 }
 

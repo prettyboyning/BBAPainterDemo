@@ -7,13 +7,13 @@
 //
 
 #import "BBAAppDelegate.h"
-#import "BBAPainterBaseViewController.h"
+#import "BBAPainterHomeViewController.h"
 
 @implementation BBAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    BBAPainterBaseViewController *examplesViewController = [[BBAPainterBaseViewController alloc] initWithStyle:0];
+    BBAPainterHomeViewController *examplesViewController = [[BBAPainterHomeViewController alloc] init];
     UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:examplesViewController];
     self.window.rootViewController = navVC;
     [self.window makeKeyAndVisible];

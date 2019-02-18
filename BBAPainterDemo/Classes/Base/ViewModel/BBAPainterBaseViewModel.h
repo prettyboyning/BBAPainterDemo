@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class BBAPainterResultSet, BBAPainterBaseCellData;
+@class BBAPainterResultSet, BBAPainterBaseModel, BBAPainterBaseCellData;
 
 typedef void(^BBAPrelayoutCompletionBlock)(NSArray *cellLayouts, NSError *error);
 typedef void (^BBAEngineLoadCompletion)(BBAPainterResultSet *resultSet, NSError *error);
@@ -54,7 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @return WMGBaseCellData 列表场景下的抽象UI数据，亦即排版模型
  */
 
-- (BBAPainterBaseCellData *)refreshCellDataWithMetaData:(BBAPainterBaseCellData *)item;
+- (BBAPainterBaseCellData *)refreshCellDataWithMetaData:(BBAPainterBaseModel *)item;
 
 /**
  * 根据指定参数对业务数据进行重载
@@ -77,10 +77,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)reloadDataResultWithParams:(NSDictionary *)params completion:(BBAEngineLoadCompletion)completion;
 
 
-@end
-
-/// 安全调用
-@interface BBAPainterBaseViewModel (SafeInvoke)
+//@end
+//
+///// 安全调用
+//@interface BBAPainterBaseViewModel (SafeInvoke)
 
 /**
  *  @brief  同步安全调用
@@ -89,7 +89,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param block  : 一切数据操作都放到这个block里面执行。
  *
  */
-- (void)bba_safe_invoke:(BBASafeInvokeBlock)block;
+//- (void)bba_safe_invoke:(BBASafeInvokeBlock)block;
 
 /**
  *  @brief  异步安全调用
@@ -97,7 +97,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param block  :  一切数据操作都放到这个block里面执行。
  *
  */
-- (void)bba_async_safe_invoke:(BBASafeInvokeBlock)block;
+//- (void)bba_async_safe_invoke:(BBASafeInvokeBlock)block;
 
 @end
 

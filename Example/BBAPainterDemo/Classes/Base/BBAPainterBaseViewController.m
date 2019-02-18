@@ -49,6 +49,7 @@
         default:
             break;
     }
+    self.title = title;
     
 }
 

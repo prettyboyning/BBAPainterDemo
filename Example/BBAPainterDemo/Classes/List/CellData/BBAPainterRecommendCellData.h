@@ -15,6 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) BBAPainterVisionObject *nameObj;
 
+@property (nonatomic, copy) NSAttributedString *name;
+
+@property (nonatomic, copy) NSAttributedString *icon;
+
+@property (nonatomic, copy) NSAttributedString *descriptionText;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

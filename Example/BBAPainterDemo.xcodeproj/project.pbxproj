@@ -11,6 +11,8 @@
 		5E0335C321F17298001A090C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0335C221F17297001A090C /* Main.storyboard */; };
 		5E0335C521F172D8001A090C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0335C421F172D8001A090C /* LaunchScreen.storyboard */; };
 		5E3BF5B921DE052B0092435E /* BBAPainterBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3BF5B821DE052B0092435E /* BBAPainterBaseViewController.m */; };
+		5E75677F221A86BF0084610E /* BBAPainterHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75677E221A86BF0084610E /* BBAPainterHomeViewController.m */; };
+		5E756782221A89B10084610E /* BBAPainterRecommendContenrView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E756781221A89B10084610E /* BBAPainterRecommendContenrView.m */; };
 		5E9BA6DD21DF2D4B00DCE9CA /* BBAPainterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9BA6DB21DF2D4B00DCE9CA /* BBAPainterListViewController.m */; };
 		5E9BA6DF21DF30BB00DCE9CA /* recommend.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E9BA6DE21DF30BA00DCE9CA /* recommend.json */; };
 		5E9BA6E221DF357400DCE9CA /* BBARecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9BA6E121DF357400DCE9CA /* BBARecommendTableViewCell.m */; };
@@ -49,6 +51,10 @@
 		5E0335C421F172D8001A090C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E3BF5B721DE052B0092435E /* BBAPainterBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterBaseViewController.h; sourceTree = "<group>"; };
 		5E3BF5B821DE052B0092435E /* BBAPainterBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterBaseViewController.m; sourceTree = "<group>"; };
+		5E75677D221A86BF0084610E /* BBAPainterHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterHomeViewController.h; sourceTree = "<group>"; };
+		5E75677E221A86BF0084610E /* BBAPainterHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterHomeViewController.m; sourceTree = "<group>"; };
+		5E756780221A89B10084610E /* BBAPainterRecommendContenrView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterRecommendContenrView.h; sourceTree = "<group>"; };
+		5E756781221A89B10084610E /* BBAPainterRecommendContenrView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterRecommendContenrView.m; sourceTree = "<group>"; };
 		5E9BA6DA21DF2D4B00DCE9CA /* BBAPainterListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAPainterListViewController.h; sourceTree = "<group>"; };
 		5E9BA6DB21DF2D4B00DCE9CA /* BBAPainterListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAPainterListViewController.m; sourceTree = "<group>"; };
 		5E9BA6DE21DF30BA00DCE9CA /* recommend.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommend.json; sourceTree = "<group>"; };
@@ -140,6 +146,8 @@
 			children = (
 				5E3BF5B721DE052B0092435E /* BBAPainterBaseViewController.h */,
 				5E3BF5B821DE052B0092435E /* BBAPainterBaseViewController.m */,
+				5E75677D221A86BF0084610E /* BBAPainterHomeViewController.h */,
+				5E75677E221A86BF0084610E /* BBAPainterHomeViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -161,6 +169,8 @@
 			children = (
 				5E9BA6E021DF357400DCE9CA /* BBARecommendTableViewCell.h */,
 				5E9BA6E121DF357400DCE9CA /* BBARecommendTableViewCell.m */,
+				5E756780221A89B10084610E /* BBAPainterRecommendContenrView.h */,
+				5E756781221A89B10084610E /* BBAPainterRecommendContenrView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -476,7 +486,9 @@
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				5E9BA6E221DF357400DCE9CA /* BBARecommendTableViewCell.m in Sources */,
 				5E9BA6E521DF393B00DCE9CA /* BBARecommendViewModel.m in Sources */,
+				5E756782221A89B10084610E /* BBAPainterRecommendContenrView.m in Sources */,
 				5E3BF5B921DE052B0092435E /* BBAPainterBaseViewController.m in Sources */,
+				5E75677F221A86BF0084610E /* BBAPainterHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -36,6 +36,7 @@ UITableViewDataSource>
 #pragma mark - private
 
 - (void)setupView {
+    self.title = @"小程序";
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     self.viewModel = [[BBARecommendViewModel alloc] init];
@@ -43,7 +44,7 @@ UITableViewDataSource>
 
 - (void)loadNetworkRequestData {
     [self.viewModel reloadDataWithParams:@{} completion:^(NSArray *cellLayouts, NSError *error) {
-        
+        [self.tableView reloadData];
     }];
 }
 
@@ -68,6 +69,9 @@ UITableViewDataSource>
 //            model.isShow = YES;
 //        }
 //    }
+    BBAPainterRecommendCellData *cellData = (BBAPainterRecommendCellData*)self.viewModel.arrayLayouts[indexPath.row];
+    
+    cell.recommendCellData = cellData;
     return cell;
 }
 

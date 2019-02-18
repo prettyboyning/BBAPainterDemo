@@ -7,9 +7,16 @@
 //
 
 #import "BBARecommendTableViewCell.h"
+#import "BBAPainterRecommendContenrView.h"
+#import "BBAPainterRecommendCellData.h"
+
+@interface BBARecommendTableViewCell ()
+
+@property (nonatomic, strong) BBAPainterRecommendContenrView *recommendView;
+
+@end
 
 @implementation BBARecommendTableViewCell
-
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -21,7 +28,15 @@
 
 - (void)setupView {
     self.backgroundColor = [UIColor whiteColor];
-    self.textLabel.text = @"开始";
+    self.recommendView = [[BBAPainterRecommendContenrView alloc] initWithFrame:self.contentView.bounds];
+    [self.contentView addSubview:self.recommendView];
+}
+
+- (void)setRecommendCellData:(BBAPainterRecommendCellData *)recommendCellData {
+    if (recommendCellData) {
+        _recommendCellData = recommendCellData;
+        self.recommendView.recommendCellData = recommendCellData;
+    }
 }
 
 @end
