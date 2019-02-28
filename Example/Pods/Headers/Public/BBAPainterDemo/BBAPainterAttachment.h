@@ -1,0 +1,1 @@
+../../../../../BBAPainterDemo/Classes/CoreText/Accessory/BBAPainterAttachment.h

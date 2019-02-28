@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B8EB2F8897938CFE044541E /* Pods_BBAPainterDemo_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF58555CCB11DD363FE84755 /* Pods_BBAPainterDemo_Tests.framework */; };
+		229A142890606D353E2550A4 /* libPods-BBAPainterDemo_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E2137DA43A6388A2F1B81D3 /* libPods-BBAPainterDemo_Example.a */; };
 		5E0335C321F17298001A090C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0335C221F17297001A090C /* Main.storyboard */; };
 		5E0335C521F172D8001A090C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0335C421F172D8001A090C /* LaunchScreen.storyboard */; };
 		5E3BF5B921DE052B0092435E /* BBAPainterBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3BF5B821DE052B0092435E /* BBAPainterBaseViewController.m */; };
@@ -32,7 +32,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		F520DBCE71084B78A75BDC5C /* Pods_BBAPainterDemo_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AC44F0DF3D019D6A288492 /* Pods_BBAPainterDemo_Example.framework */; };
+		D205F7003BF2931ABF20A84F /* libPods-BBAPainterDemo_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C8D357DDE90F15D0B095C6E /* libPods-BBAPainterDemo_Tests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		1FD6DA4E36A33FBF0040C9FD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		4C8D357DDE90F15D0B095C6E /* libPods-BBAPainterDemo_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BBAPainterDemo_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0335C221F17297001A090C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5E0335C421F172D8001A090C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E3BF5B721DE052B0092435E /* BBAPainterBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterBaseViewController.h; sourceTree = "<group>"; };
@@ -89,10 +90,9 @@
 		746A5E144505E8F243DD5F2A /* Pods-BBAPainterDemo_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBAPainterDemo_Example.debug.xcconfig"; path = "Target Support Files/Pods-BBAPainterDemo_Example/Pods-BBAPainterDemo_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		78E8B5482A4AA67717D0264B /* Pods-BBAPainterDemo_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBAPainterDemo_Tests.debug.xcconfig"; path = "Target Support Files/Pods-BBAPainterDemo_Tests/Pods-BBAPainterDemo_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		7CDD44635BFDE659C740D2AA /* BBAPainterDemo.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BBAPainterDemo.podspec; path = ../BBAPainterDemo.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		E4AC44F0DF3D019D6A288492 /* Pods_BBAPainterDemo_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BBAPainterDemo_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E2137DA43A6388A2F1B81D3 /* libPods-BBAPainterDemo_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BBAPainterDemo_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB6910811BDE44EA8ACA4E3D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		ECF8AEF04944965A621395AE /* Pods-BBAPainterDemo_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBAPainterDemo_Tests.release.xcconfig"; path = "Target Support Files/Pods-BBAPainterDemo_Tests/Pods-BBAPainterDemo_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		FF58555CCB11DD363FE84755 /* Pods_BBAPainterDemo_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BBAPainterDemo_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +103,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				F520DBCE71084B78A75BDC5C /* Pods_BBAPainterDemo_Example.framework in Frameworks */,
+				229A142890606D353E2550A4 /* libPods-BBAPainterDemo_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +114,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				2B8EB2F8897938CFE044541E /* Pods_BBAPainterDemo_Tests.framework in Frameworks */,
+				D205F7003BF2931ABF20A84F /* libPods-BBAPainterDemo_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,8 +240,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				E4AC44F0DF3D019D6A288492 /* Pods_BBAPainterDemo_Example.framework */,
-				FF58555CCB11DD363FE84755 /* Pods_BBAPainterDemo_Tests.framework */,
+				7E2137DA43A6388A2F1B81D3 /* libPods-BBAPainterDemo_Example.a */,
+				4C8D357DDE90F15D0B095C6E /* libPods-BBAPainterDemo_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -314,7 +314,6 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				E224B3C80D15B67B754ABCE8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -425,28 +424,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E224B3C80D15B67B754ABCE8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BBAPainterDemo_Example/Pods-BBAPainterDemo_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BBAPainterDemo/BBAPainterDemo.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BBAPainterDemo.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BBAPainterDemo_Example/Pods-BBAPainterDemo_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F6B3A5269414FF57021B14FD /* [CP] Check Pods Manifest.lock */ = {

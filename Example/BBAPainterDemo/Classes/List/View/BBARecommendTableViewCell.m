@@ -28,7 +28,8 @@
 
 - (void)setupView {
     self.backgroundColor = [UIColor whiteColor];
-    self.recommendView = [[BBAPainterRecommendContenrView alloc] initWithFrame:self.contentView.bounds];
+//    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.recommendView = [[BBAPainterRecommendContenrView alloc] initWithFrame:CGRectMake(0, 0, 320, 80)];
     [self.contentView addSubview:self.recommendView];
 }
 

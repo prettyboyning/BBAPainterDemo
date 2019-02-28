@@ -6,12 +6,12 @@
 //  Copyright © 2019年 Baidu. All rights reserved.
 //
 
-#import <BBAPainterDemo/BBAPainterAsyncDrawView.h>
+#import <BBAPainterDemo/BBAPainterCanvasDrawView.h>
 
 @class BBAPainterRecommendCellData;
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BBAPainterRecommendContenrView : BBAPainterAsyncDrawView
+@interface BBAPainterRecommendContenrView : BBAPainterCanvasDrawView
 
 @property (nonatomic, strong) BBAPainterRecommendCellData *recommendCellData;
 

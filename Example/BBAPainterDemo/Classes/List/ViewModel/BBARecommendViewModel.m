@@ -29,6 +29,8 @@
         [result addObject:model];
     }];
     [_resultSet addItems:result];
+    [_resultSet addItems:result];
+    [_resultSet addItems:result];
     if (completion) {
         completion(_resultSet, nil);
     }
@@ -39,13 +41,15 @@
     BBAPainterRecommendCellData *cellData = [BBAPainterRecommendCellData new];
     if ([item isKindOfClass:[BBAPainterRecommendModel class]]) {
         BBAPainterRecommendModel *itemModel = (BBAPainterRecommendModel*)item;
-        NSMutableAttributedString *nameAttributed = [[NSMutableAttributedString alloc] initWithString:@"开关关键是两个就饿了就"];
-        [nameAttributed addAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12], NSForegroundColorAttributeName:[UIColor blackColor]} range:NSMakeRange(0, nameAttributed.string.length)];
+        NSMutableAttributedString *nameAttributed = [[NSMutableAttributedString alloc] initWithString:itemModel.name];
+        [nameAttributed addAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16], NSForegroundColorAttributeName:[UIColor blackColor]} range:NSMakeRange(0, nameAttributed.string.length)];
         cellData.name = nameAttributed.copy;
         
-        NSMutableAttributedString *desAttributed = [[NSMutableAttributedString alloc] initWithString:@"开关关键是两个就饿了就"];
-        [desAttributed addAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12], NSForegroundColorAttributeName:[UIColor blackColor]} range:NSMakeRange(0, desAttributed.string.length)];
+        NSMutableAttributedString *desAttributed = [[NSMutableAttributedString alloc] initWithString:itemModel.itemDescription];
+        [desAttributed addAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:13], NSForegroundColorAttributeName:[UIColor grayColor]} range:NSMakeRange(0, desAttributed.string.length)];
         cellData.descriptionText = desAttributed.copy;
+        
+        cellData.icon = itemModel.icon;
     }
     
     return cellData;
