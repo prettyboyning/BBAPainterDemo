@@ -10,7 +10,17 @@
 		229A142890606D353E2550A4 /* libPods-BBAPainterDemo_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E2137DA43A6388A2F1B81D3 /* libPods-BBAPainterDemo_Example.a */; };
 		5E0335C321F17298001A090C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0335C221F17297001A090C /* Main.storyboard */; };
 		5E0335C521F172D8001A090C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0335C421F172D8001A090C /* LaunchScreen.storyboard */; };
+		5E30B382223B7A7800B01A9F /* BBAPainterTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E30B381223B7A7800B01A9F /* BBAPainterTransaction.m */; };
+		5E30B385223B7AEF00B01A9F /* CALayer+BBAPainterTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E30B384223B7AEF00B01A9F /* CALayer+BBAPainterTransaction.m */; };
+		5E32794422422E0D00F474E9 /* BBAPainterAsyncLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E32794322422E0D00F474E9 /* BBAPainterAsyncLayer.m */; };
+		5E32794722422E5100F474E9 /* BBAPainterImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E32794622422E5100F474E9 /* BBAPainterImageView.m */; };
+		5E32794A224230E100F474E9 /* BBAPainterFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E327949224230E100F474E9 /* BBAPainterFlag.m */; };
+		5E32794D22423A9C00F474E9 /* BBAPainterUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E32794C22423A9C00F474E9 /* BBAPainterUtils.m */; };
+		5E32795022425ED200F474E9 /* BBAPainterTransactionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E32794F22425ED200F474E9 /* BBAPainterTransactionGroup.m */; };
+		5E32795322426E8100F474E9 /* BBAPainterAsyncView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E32795222426E8100F474E9 /* BBAPainterAsyncView.m */; };
+		5E3AD63D22320C660011297B /* BBASimpleWebBrowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AD63C22320C660011297B /* BBASimpleWebBrowerViewController.m */; };
 		5E3BF5B921DE052B0092435E /* BBAPainterBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3BF5B821DE052B0092435E /* BBAPainterBaseViewController.m */; };
+		5E710AE22237DB7300A174BD /* feed.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E710AE12237DB7300A174BD /* feed.json */; };
 		5E75677F221A86BF0084610E /* BBAPainterHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75677E221A86BF0084610E /* BBAPainterHomeViewController.m */; };
 		5E756782221A89B10084610E /* BBAPainterRecommendContenrView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E756781221A89B10084610E /* BBAPainterRecommendContenrView.m */; };
 		5E9BA6DD21DF2D4B00DCE9CA /* BBAPainterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9BA6DB21DF2D4B00DCE9CA /* BBAPainterListViewController.m */; };
@@ -50,8 +60,27 @@
 		4C8D357DDE90F15D0B095C6E /* libPods-BBAPainterDemo_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BBAPainterDemo_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0335C221F17297001A090C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5E0335C421F172D8001A090C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5E30B380223B7A7800B01A9F /* BBAPainterTransaction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterTransaction.h; sourceTree = "<group>"; };
+		5E30B381223B7A7800B01A9F /* BBAPainterTransaction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterTransaction.m; sourceTree = "<group>"; };
+		5E30B383223B7AEF00B01A9F /* CALayer+BBAPainterTransaction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+BBAPainterTransaction.h"; sourceTree = "<group>"; };
+		5E30B384223B7AEF00B01A9F /* CALayer+BBAPainterTransaction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+BBAPainterTransaction.m"; sourceTree = "<group>"; };
+		5E32794222422E0D00F474E9 /* BBAPainterAsyncLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterAsyncLayer.h; sourceTree = "<group>"; };
+		5E32794322422E0D00F474E9 /* BBAPainterAsyncLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterAsyncLayer.m; sourceTree = "<group>"; };
+		5E32794522422E5100F474E9 /* BBAPainterImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterImageView.h; sourceTree = "<group>"; };
+		5E32794622422E5100F474E9 /* BBAPainterImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterImageView.m; sourceTree = "<group>"; };
+		5E327948224230E100F474E9 /* BBAPainterFlag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterFlag.h; sourceTree = "<group>"; };
+		5E327949224230E100F474E9 /* BBAPainterFlag.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterFlag.m; sourceTree = "<group>"; };
+		5E32794B22423A9C00F474E9 /* BBAPainterUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterUtils.h; sourceTree = "<group>"; };
+		5E32794C22423A9C00F474E9 /* BBAPainterUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterUtils.m; sourceTree = "<group>"; };
+		5E32794E22425ED200F474E9 /* BBAPainterTransactionGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterTransactionGroup.h; sourceTree = "<group>"; };
+		5E32794F22425ED200F474E9 /* BBAPainterTransactionGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterTransactionGroup.m; sourceTree = "<group>"; };
+		5E32795122426E8100F474E9 /* BBAPainterAsyncView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterAsyncView.h; sourceTree = "<group>"; };
+		5E32795222426E8100F474E9 /* BBAPainterAsyncView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterAsyncView.m; sourceTree = "<group>"; };
+		5E3AD63B22320C660011297B /* BBASimpleWebBrowerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBASimpleWebBrowerViewController.h; sourceTree = "<group>"; };
+		5E3AD63C22320C660011297B /* BBASimpleWebBrowerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBASimpleWebBrowerViewController.m; sourceTree = "<group>"; };
 		5E3BF5B721DE052B0092435E /* BBAPainterBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterBaseViewController.h; sourceTree = "<group>"; };
 		5E3BF5B821DE052B0092435E /* BBAPainterBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterBaseViewController.m; sourceTree = "<group>"; };
+		5E710AE12237DB7300A174BD /* feed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feed.json; sourceTree = "<group>"; };
 		5E75677D221A86BF0084610E /* BBAPainterHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterHomeViewController.h; sourceTree = "<group>"; };
 		5E75677E221A86BF0084610E /* BBAPainterHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterHomeViewController.m; sourceTree = "<group>"; };
 		5E756780221A89B10084610E /* BBAPainterRecommendContenrView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterRecommendContenrView.h; sourceTree = "<group>"; };
@@ -132,9 +161,52 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		5E30B37F223B7A3D00B01A9F /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				5E30B380223B7A7800B01A9F /* BBAPainterTransaction.h */,
+				5E30B381223B7A7800B01A9F /* BBAPainterTransaction.m */,
+				5E30B383223B7AEF00B01A9F /* CALayer+BBAPainterTransaction.h */,
+				5E30B384223B7AEF00B01A9F /* CALayer+BBAPainterTransaction.m */,
+				5E32794E22425ED200F474E9 /* BBAPainterTransactionGroup.h */,
+				5E32794F22425ED200F474E9 /* BBAPainterTransactionGroup.m */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		5E32794122422D7F00F474E9 /* Async */ = {
+			isa = PBXGroup;
+			children = (
+				5E32794222422E0D00F474E9 /* BBAPainterAsyncLayer.h */,
+				5E32794322422E0D00F474E9 /* BBAPainterAsyncLayer.m */,
+				5E32794522422E5100F474E9 /* BBAPainterImageView.h */,
+				5E32794622422E5100F474E9 /* BBAPainterImageView.m */,
+				5E327948224230E100F474E9 /* BBAPainterFlag.h */,
+				5E327949224230E100F474E9 /* BBAPainterFlag.m */,
+				5E32794B22423A9C00F474E9 /* BBAPainterUtils.h */,
+				5E32794C22423A9C00F474E9 /* BBAPainterUtils.m */,
+				5E32795122426E8100F474E9 /* BBAPainterAsyncView.h */,
+				5E32795222426E8100F474E9 /* BBAPainterAsyncView.m */,
+			);
+			path = Async;
+			sourceTree = "<group>";
+		};
+		5E3AD63A22320B4B0011297B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5E3AD63B22320C660011297B /* BBASimpleWebBrowerViewController.h */,
+				5E3AD63C22320C660011297B /* BBASimpleWebBrowerViewController.m */,
+			);
+			name = ViewController;
+			path = Web/ViewController;
+			sourceTree = "<group>";
+		};
 		5E3BF5B521DE04FF0092435E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5E32794122422D7F00F474E9 /* Async */,
+				5E30B37F223B7A3D00B01A9F /* Transaction */,
+				5E3AD63A22320B4B0011297B /* ViewController */,
 				5E9BA6D321DF2B9800DCE9CA /* List */,
 				5E3BF5B621DE04FF0092435E /* Base */,
 			);
@@ -196,6 +268,7 @@
 		5E9BA6DC21DF2D4B00DCE9CA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5E710AE12237DB7300A174BD /* feed.json */,
 				5E9BA6DE21DF30BA00DCE9CA /* recommend.json */,
 				5EFC1FBE21F5FF8C00F01D91 /* BBAPainterRecommendModel.h */,
 				5EFC1FBF21F5FF8C00F01D91 /* BBAPainterRecommendModel.m */,
@@ -388,6 +461,7 @@
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				5E9BA6DF21DF30BB00DCE9CA /* recommend.json in Resources */,
+				5E710AE22237DB7300A174BD /* feed.json in Resources */,
 				5E0335C521F172D8001A090C /* LaunchScreen.storyboard in Resources */,
 				5E0335C321F17298001A090C /* Main.storyboard in Resources */,
 			);
@@ -455,12 +529,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E32794A224230E100F474E9 /* BBAPainterFlag.m in Sources */,
+				5E32795322426E8100F474E9 /* BBAPainterAsyncView.m in Sources */,
+				5E30B385223B7AEF00B01A9F /* CALayer+BBAPainterTransaction.m in Sources */,
 				5EFC1FC021F5FF8C00F01D91 /* BBAPainterRecommendModel.m in Sources */,
+				5E32794D22423A9C00F474E9 /* BBAPainterUtils.m in Sources */,
 				6003F59E195388D20070C39A /* BBAAppDelegate.m in Sources */,
+				5E3AD63D22320C660011297B /* BBASimpleWebBrowerViewController.m in Sources */,
 				5E9BA6DD21DF2D4B00DCE9CA /* BBAPainterListViewController.m in Sources */,
 				5ED0FFAF21F8994E0083DE5E /* BBAPainterRecommendCellData.m in Sources */,
+				5E32794722422E5100F474E9 /* BBAPainterImageView.m in Sources */,
 				6003F5A7195388D20070C39A /* BBAViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				5E32795022425ED200F474E9 /* BBAPainterTransactionGroup.m in Sources */,
+				5E30B382223B7A7800B01A9F /* BBAPainterTransaction.m in Sources */,
+				5E32794422422E0D00F474E9 /* BBAPainterAsyncLayer.m in Sources */,
 				5E9BA6E221DF357400DCE9CA /* BBARecommendTableViewCell.m in Sources */,
 				5E9BA6E521DF393B00DCE9CA /* BBARecommendViewModel.m in Sources */,
 				5E756782221A89B10084610E /* BBAPainterRecommendContenrView.m in Sources */,

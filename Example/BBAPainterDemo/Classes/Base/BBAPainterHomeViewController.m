@@ -9,6 +9,7 @@
 #import "BBAPainterHomeViewController.h"
 #import "BBAPainterBaseViewController.h"
 #import "BBAPainterListViewController.h"
+#import "BBASimpleWebBrowerViewController.h"
 
 typedef NS_ENUM(NSUInteger, PainterDemoSection) {
     PainterDemoSection_Basic,
@@ -124,11 +125,10 @@ typedef NS_ENUM(NSInteger, PainterDemoListRow) {
         if (indexPath.row == PainterDemoListRow_ResturantList) {
             BBAPainterListViewController *resturantVC = [[BBAPainterListViewController alloc] init];
             [self.navigationController pushViewController:resturantVC animated:YES];
+        } else if (indexPath.row == PainterDemoListRow_OrderList) {
+                    BBASimpleWebBrowerViewController *orderVC = [[BBASimpleWebBrowerViewController alloc] init];
+                    [self.navigationController pushViewController:orderVC animated:YES];
         }
-        //        else if (indexPath.row == PainterDemoListRow_OrderList){
-        //            DemoOrderListViewController *orderVC = [[DemoOrderListViewController alloc] init];
-        //            [self.navigationController pushViewController:orderVC animated:YES];
-        //        }
     }
 }
 
