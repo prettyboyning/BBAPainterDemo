@@ -19,8 +19,6 @@ typedef NS_ENUM(NSUInteger, BBAPainterAsyncTransactionState) {
     BBAPainterAsyncTransactionStateComplete      /// 事务完成
 };
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface BBAPainterTransaction : NSObject
 
 /**
@@ -31,6 +29,19 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (BBAPainterTransaction *)initWithCallbackQueue:(dispatch_queue_t)callBackQueue completionBlock:(BBAPainterAsyncTranscationCompletionBlock)completion;
 
+/**
+ *  @brief 添加一个操作到LWTransaction
+ *
+ *  @param target             消息接收者
+ *  @param selector           消息选择子
+ *  @param object             消息参数
+ *  @param operationComletion 操作完成回调
+ */
+- (void)addAsyncOperationWithTarget:(id)target
+                           selector:(SEL)selector
+                             object:(id)object
+                         completion:(BBAPainterAsyncTransactionOperationCompletionBlock)operationComletion;
+
 /// 回调队列
 @property (nonatomic, assign, readonly) dispatch_queue_t callBackQueue;
 /// 完成回调
@@ -40,4 +51,3 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END

@@ -10,10 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class BBAPainterGifImage;
 @interface BBAPainterImageView : UIImageView
 
 /// 是否启动异步绘制, 默认是 YES
 @property (nonatomic, assign) BOOL displayAsynchronously;
+/// Gif 图片
+@property (nonatomic, strong) BBAPainterGifImage *gifImage;
 
 /**
  *  一个标示符字符串，跟LWImageStorage中的同名属性对应.
@@ -28,6 +31,14 @@ NS_ASSUME_NONNULL_BEGIN
  *  默认是 YES
  */
 @property (nonatomic, assign) BOOL displayTransactionGroup;
+
+/**
+ *  如果图片是gif，可以指定动画播放模式。
+ *  NSDefaultRunLoopMode: 当UIScrollView及其子类对象滚动式，将暂停播放
+ *  NSRunLoopCommonModes：当UIScrollView及其子类对象滚动式，不会暂停播放
+ *
+ */
+@property (nonatomic, copy) NSString* animationRunLoopMode;
 
 
 @end

@@ -42,8 +42,8 @@
     return self;
 }
 
-- (BOOL)addAsyncOperationWithTarget:(id)target selector:(SEL)selector object:(id)object completion:(BBAPainterAsyncTransactionOperationCompletionBlock)completion {
-    return YES;
+- (void)addAsyncOperationWithTarget:(id)target selector:(SEL)selector object:(id)object completion:(BBAPainterAsyncTransactionOperationCompletionBlock)completion {
+//    return YES;
 }
 
 - (NSMutableArray *)operationsArray {

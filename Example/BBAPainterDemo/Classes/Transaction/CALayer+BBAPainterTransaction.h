@@ -10,7 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class BBAPainterTransaction;
 @interface CALayer (BBAPainterTransaction)
+
+/// 创建一个LWTransaction并添加到transactions当中
+@property (nonatomic, readonly, strong) BBAPainterTransaction* painter_asyncTransaction;
 
 @end
 
