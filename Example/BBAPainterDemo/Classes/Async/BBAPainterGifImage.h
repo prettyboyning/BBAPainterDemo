@@ -17,6 +17,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 总帧数
 @property (nonatomic, assign, readonly) NSUInteger frameCount;
+
+/// 播放循环次数
+@property (nonatomic, assign, readonly) NSUInteger loopCount;
+
+/// 第一帧图片
+@property (nonatomic, strong, readonly) UIImage* coverImage;
+
 /**
  *  @brief 获取帧索引对应的图片
  *  @param index 位置

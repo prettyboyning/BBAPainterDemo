@@ -106,16 +106,157 @@ const NSTimeInterval kPainterGIFDelayTimeIntervalMinimumValue = 0.02; // 每帧�
 
 - (void)displayLayer:(CALayer *)layer {
     if (self.displayAsynchronously) {
-        if (self.displayTransactionGroup) {
-            [self.layer.painter_asyncTransaction addAsyncOperationWithTarget:self.layer
+        [self.layer.painter_asyncTransaction addAsyncOperationWithTarget:self.layer
                                                                selector:@selector(setContents:)
                                                                  object:(__bridge id _Nullable)self.image.CGImage
                                                              completion:nil];
-        } else {
-            [self.layer setContents:(__bridge id _Nullable)self.image.CGImage];
-        }
     } else {
         [self.layer setContents:(__bridge id _Nullable)self.image.CGImage];
+    }
+}
+
+#pragma mark - Orverride
+
+- (void)setAlpha:(CGFloat)alpha {
+    [super setAlpha:alpha];
+    [self animateIfNeed];
+}
+
+- (void)setHidden:(BOOL)hidden {
+    if (self.displayAsynchronously) {
+        [self.layer.painter_asyncTransaction addAsyncOperationWithTarget:self
+                                                                    selector:@selector(_setHidden:)
+                                                                      object:@(hidden)
+                                                                  completion:nil];
+    } else {
+        [self _setHidden:@(hidden)];
+    }
+}
+
+- (void)_setHidden:(NSNumber *)hidden {
+    [super setHidden:[hidden boolValue]];
+    [self animateIfNeed];
+}
+
+- (void)setFrame:(CGRect)frame {
+    if (self.displayAsynchronously) {
+        [self.layer.painter_asyncTransaction addAsyncOperationWithTarget:self
+                                                           selector:@selector(_setFrameValue:)
+                                                             object:[NSValue valueWithCGRect:frame]
+                                                         completion:nil];
+    } else {
+        [super setFrame:frame];
+    }
+}
+
+- (void)_setFrameValue:(NSValue *)frameValue {
+    if (!CGRectEqualToRect(super.frame, [frameValue CGRectValue])) {
+        [super setFrame:[frameValue CGRectValue]];
+    }
+    [self animateIfNeed];
+}
+
+- (UIImage *)image {
+    UIImage* image = nil;
+    
+    if (self.gifImage) {
+        // 如果是gif动画，这里从去当前帧的UIImage对象,当displayLink计时器触发时，会调用
+        // “- (void)displayLayer:(CALayer *)layer ”方法。通过设置Layer的contents完成动画的播放
+        image = self.gifCurrentFrame;
+    } else {
+        CGImageRef imageRef = (__bridge CGImageRef)(self.layer.contents);
+        image = [UIImage imageWithCGImage:imageRef];
+    }
+    return image;
+}
+
+
+
+- (void)setImage:(UIImage *)image {
+    // 清除image
+    if (!image) {
+        if (self.image) {
+            CGImageRef imageRef = (__bridge_retained CGImageRef)(self.layer.contents);
+            id contents = self.layer.contents;
+            self.layer.contents = nil;
+            if (imageRef) {
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+                    [contents class];
+                    CFRelease(imageRef);
+                });
+            }
+        }
+    } else {
+        if (self.displayAsynchronously) {
+            [self.layer.painter_asyncTransaction addAsyncOperationWithTarget:self.layer
+                                                               selector:@selector(setContents:)
+                                                                 object:(__bridge id _Nullable)image.CGImage
+                                                             completion:nil];
+        } else {
+            [self.layer setContents:(__bridge id _Nullable)image.CGImage];
+        }
+    }
+}
+
+- (void)setGifImage:(BBAPainterGifImage *)gifImage {
+    if ([_gifImage isEqual:gifImage]) {
+        return;
+    }
+    //清除gifImage
+    if (!gifImage) {
+        if (self.gifImage) {
+            BBAPainterGifImage *oldOne = _gifImage;
+            _gifImage = nil;
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+                [oldOne class];
+            });
+            [self stopAnimating];
+        }
+    } else {
+        BBAPainterGifImage *oldOne = _gifImage;
+        _gifImage = nil;
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+            [oldOne class];
+        });
+        
+        _gifImage = gifImage;
+        
+        // 初始化为第一帧
+        self.gifCurrentFrame = gifImage.coverImage;
+        self.gifCurrentFrameIndex = 0;
+        
+        
+        if (gifImage.loopCount > 0) {
+            self.loopCountdown = gifImage.loopCount;
+        } else {
+            self.loopCountdown = NSUIntegerMax;
+        }
+        
+        self.accumulator = 0.0;
+        [self updateNeedAnimate];//确定是否需要动画
+        
+        if (self.needAnimate) {
+            [self startAnimating];
+        }
+        [self.layer setNeedsDisplay];
+    }
+}
+
+- (BOOL)isAnimating {
+    BOOL isAnimating = NO;
+    if (self.gifImage) {
+        isAnimating = self.displayLink && !self.displayLink.isPaused;
+    } else {
+        isAnimating = [super isAnimating];
+    }
+    return isAnimating;
+}
+
+- (void)setAnimationRunLoopMode:(NSString *)animationRunLoopMode {
+    if (![@[NSDefaultRunLoopMode, NSRunLoopCommonModes] containsObject:animationRunLoopMode]) {
+        _animationRunLoopMode = [[self class] defaultAnimatitonRunLoopMode];
+    } else {
+        _animationRunLoopMode = animationRunLoopMode;
     }
 }
 
