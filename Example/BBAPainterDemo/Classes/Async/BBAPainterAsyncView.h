@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BBAPainterAsyncView : UIView
 
+/// 是否异步绘制，默认是YES
+@property (nonatomic, assign) BOOL displaysAsynchronously;
+
 @end
 
 NS_ASSUME_NONNULL_END

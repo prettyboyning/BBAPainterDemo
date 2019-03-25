@@ -10,6 +10,7 @@
 #import "BBAPainterBaseViewController.h"
 #import "BBAPainterListViewController.h"
 #import "BBASimpleWebBrowerViewController.h"
+#import "BBAPainterAsyncViewController.h"
 
 typedef NS_ENUM(NSUInteger, PainterDemoSection) {
     PainterDemoSection_Basic,
@@ -118,8 +119,13 @@ typedef NS_ENUM(NSInteger, PainterDemoListRow) {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.section == PainterDemoSection_Basic) {
-        BBAPainterBaseViewController *detailVC = [[BBAPainterBaseViewController alloc] initWithStyle:(PainterDemoBasicRow)indexPath.row];
-        [self.navigationController pushViewController:detailVC animated:YES];
+        if (indexPath.row == 0) {
+            BBAPainterBaseViewController *detailVC = [[BBAPainterBaseViewController alloc] initWithStyle:(PainterDemoBasicRow)indexPath.row];
+            [self.navigationController pushViewController:detailVC animated:YES];
+        } else if (indexPath.row == 1) {
+            BBAPainterAsyncViewController *asyncVC = [[BBAPainterAsyncViewController alloc] init];
+            [self.navigationController pushViewController:asyncVC animated:YES];
+        }
     }
     else if (indexPath.section == PainterDemoSection_List){
         if (indexPath.row == PainterDemoListRow_ResturantList) {

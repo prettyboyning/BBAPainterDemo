@@ -60,15 +60,6 @@ UITableViewDataSource>
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BBARecommendTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kBBARecommendTableViewCellIdentifier forIndexPath:indexPath];
-    
-//    if ([self.recommendListModel.recommendList[indexPath.row] isKindOfClass:[BBAHomePageMNPRecommendItem class]]) {
-//        BBAHomePageMNPRecommendItem *model = self.recommendListModel.recommendList[indexPath.row];
-//        [cell updateRecommendTableViewCell:model];
-//        if (!model.isShow) {
-//            [self.recordShowAppItems safe_addObject:model];
-//            model.isShow = YES;
-//        }
-//    }
     BBAPainterRecommendCellData *cellData = (BBAPainterRecommendCellData*)self.viewModel.arrayLayouts[indexPath.row];
     
     cell.recommendCellData = cellData;
