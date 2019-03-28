@@ -21,6 +21,13 @@ typedef NS_ENUM(NSUInteger, BBAPainterAsyncTransactionState) {
 
 @interface BBAPainterTransaction : NSObject
 
+/// 回调队列
+@property (nonatomic, assign, readonly) dispatch_queue_t callBackQueue;
+/// 完成回调
+@property (nonatomic, copy, readonly) BBAPainterAsyncTranscationCompletionBlock completionBlock;
+/// 当前事务的状态
+@property (nonatomic, assign, readonly) BBAPainterAsyncTransactionState transactionState;
+
 /**
  * @brief 生成一个 BBAPainterTransaction
  *
@@ -42,12 +49,15 @@ typedef NS_ENUM(NSUInteger, BBAPainterAsyncTransactionState) {
                              object:(id)object
                          completion:(BBAPainterAsyncTransactionOperationCompletionBlock)operationComletion;
 
-/// 回调队列
-@property (nonatomic, assign, readonly) dispatch_queue_t callBackQueue;
-/// 完成回调
-@property (nonatomic, copy, readonly) BBAPainterAsyncTranscationCompletionBlock completionBlock;
-/// 当前事务的状态
-@property (nonatomic, assign, readonly) BBAPainterAsyncTransactionState transactionState;
+/**
+ *  @brief 提交一个BBAPainterTransaction中的Operation
+ */
+- (void)commit;
+
+/**
+ *  @brief 取消一个BBAPainterTransaction当中的Operation
+ */
+- (void)cancel;
 
 @end
 

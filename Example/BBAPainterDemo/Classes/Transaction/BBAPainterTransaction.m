@@ -7,9 +7,44 @@
 //
 
 #import "BBAPainterTransaction.h"
+#import "BBAPainterTransactionGroup.h"
+#import <objc/message.h>
 
 @interface BBAPainterTransactionOperation : NSObject
 
+@property (nonatomic, strong) id target;
+@property (nonatomic, assign) SEL selector;
+@property (nonatomic, strong) id object;
+@property (nonatomic, copy) BBAPainterAsyncTransactionOperationCompletionBlock completion;
+
+- (id)initWithCompletion:(BBAPainterAsyncTransactionOperationCompletionBlock)completion;
+
+- (void)callAndReleaseCompletionBlock:(BOOL)canceled;
+
+@end
+
+@implementation BBAPainterTransactionOperation
+
+
+- (id)initWithCompletion:(BBAPainterAsyncTransactionOperationCompletionBlock)completion {
+    self = [super init];
+    if (self) {
+        self.completion = [completion copy];
+    }
+    return self;
+}
+
+- (void)callAndReleaseCompletionBlock:(BOOL)canceled {
+    void (*objc_msgSendToPerform)(id, SEL, id) = (void*)objc_msgSend;
+    objc_msgSendToPerform(self.target,self.selector,self.object);
+    if (self.completion) {
+        self.completion(canceled);
+        self.completion = nil;
+    }
+    self.target = nil;
+    self.selector = nil;
+    self.object = nil;
+}
 
 @end
 
@@ -43,8 +78,43 @@
 }
 
 - (void)addAsyncOperationWithTarget:(id)target selector:(SEL)selector object:(id)object completion:(BBAPainterAsyncTransactionOperationCompletionBlock)completion {
-//    return YES;
+    BBAPainterTransactionOperation* operation = [[BBAPainterTransactionOperation alloc]
+                                                     initWithCompletion:completion];
+    operation.target = target;
+    operation.selector = selector;
+    operation.object = object;
+    [self.operationsArray addObject:operation];
 }
+
+- (void)cancel {
+    self.transactionState = BBAPainterAsyncTransactionStateCanceled;
+}
+
+- (void)commit {
+    self.transactionState = BBAPainterAsyncTransactionStateCommitted;
+    if ([_operationsArray count] == 0) {
+        if (_completionBlock) {
+            _completionBlock(self, NO);
+        }
+    } else {
+        [self completeTransaction];
+    }
+}
+
+- (void)completeTransaction {
+    if (self.transactionState != BBAPainterAsyncTransactionStateComplete) {
+        BOOL isCanceled = (self.transactionState == BBAPainterAsyncTransactionStateCanceled);
+        for (BBAPainterTransactionOperation* operation in self.operationsArray) {
+            [operation callAndReleaseCompletionBlock:isCanceled];
+        }
+        self.transactionState = BBAPainterAsyncTransactionStateComplete;
+        if (_completionBlock) {
+            _completionBlock(self, isCanceled);
+        }
+    }
+}
+
+#pragma Mark - getter
 
 - (NSMutableArray *)operationsArray {
     if (!_operationsArray) {
