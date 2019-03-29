@@ -48,7 +48,7 @@ NS_ASSUME_NONNULL_BEGIN
 @required
 /**
  *  @brief 异步绘制协议的协议方法
- *  @return 返回一个异步绘制任务的抽象LWAsyncDisplayTransaction对象，可以通过这个对象的属性来得到将要开始绘制时，绘制时，和绘制完成时的回调。
+ *  @return 返回一个异步绘制任务的抽象BBAPainterAsyncDisplayTransaction对象，可以通过这个对象的属性来得到将要开始绘制时，绘制时，和绘制完成时的回调。
  */
 - (BBAPainterAsyncDisplayTransaction *)asyncDisplayTransaction;
 

@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 是否启动异步绘制, 默认是 YES
 @property (nonatomic, assign) BOOL displayAsynchronously;
 /// Gif 图片
-@property (nonatomic, strong) BBAPainterGifImage *gifImage;
+@property (nonatomic, strong, nullable) BBAPainterGifImage *gifImage;
 
 /**
  *  一个标示符字符串，跟LWImageStorage中的同名属性对应.

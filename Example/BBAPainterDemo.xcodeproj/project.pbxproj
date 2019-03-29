@@ -10,6 +10,7 @@
 		229A142890606D353E2550A4 /* libPods-BBAPainterDemo_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E2137DA43A6388A2F1B81D3 /* libPods-BBAPainterDemo_Example.a */; };
 		5E0335C321F17298001A090C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0335C221F17297001A090C /* Main.storyboard */; };
 		5E0335C521F172D8001A090C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0335C421F172D8001A090C /* LaunchScreen.storyboard */; };
+		5E0F5846224DFFF10097F08C /* BBAPainterLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0F5845224DFFF10097F08C /* BBAPainterLayout.m */; };
 		5E179F1B224A0E3A00D361C7 /* BBAPainterImageStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E179F1A224A0E3A00D361C7 /* BBAPainterImageStorage.m */; };
 		5E1C815522435BA200C5BB42 /* BBAPainterGifImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C815422435BA200C5BB42 /* BBAPainterGifImage.m */; };
 		5E1C81582243655900C5BB42 /* BBAPainterProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C81572243655900C5BB42 /* BBAPainterProxy.m */; };
@@ -67,6 +68,8 @@
 		4C8D357DDE90F15D0B095C6E /* libPods-BBAPainterDemo_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BBAPainterDemo_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0335C221F17297001A090C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5E0335C421F172D8001A090C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5E0F5844224DFFF10097F08C /* BBAPainterLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterLayout.h; sourceTree = "<group>"; };
+		5E0F5845224DFFF10097F08C /* BBAPainterLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterLayout.m; sourceTree = "<group>"; };
 		5E179F19224A0E3A00D361C7 /* BBAPainterImageStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterImageStorage.h; sourceTree = "<group>"; };
 		5E179F1A224A0E3A00D361C7 /* BBAPainterImageStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterImageStorage.m; sourceTree = "<group>"; };
 		5E1C815322435BA200C5BB42 /* BBAPainterGifImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterGifImage.h; sourceTree = "<group>"; };
@@ -183,6 +186,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		5E0F5843224DC3BC0097F08C /* Image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		5E30B37F223B7A3D00B01A9F /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +232,8 @@
 				5EEB6CCB224BB5240047057A /* UIImage+BBAGallop.m */,
 				5E3897BE224CAAA200AAAE83 /* BBAPainterCGRectTransform.h */,
 				5E3897BF224CAAA200AAAE83 /* BBAPainterCGRectTransform.m */,
+				5E0F5844224DFFF10097F08C /* BBAPainterLayout.h */,
+				5E0F5845224DFFF10097F08C /* BBAPainterLayout.m */,
 			);
 			path = Async;
 			sourceTree = "<group>";
@@ -241,6 +253,7 @@
 		5E3BF5B521DE04FF0092435E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5E0F5843224DC3BC0097F08C /* Image */,
 				5E32794122422D7F00F474E9 /* Async */,
 				5E30B37F223B7A3D00B01A9F /* Transaction */,
 				5E3AD63A22320B4B0011297B /* ViewController */,
@@ -582,6 +595,7 @@
 				5E32794722422E5100F474E9 /* BBAPainterImageView.m in Sources */,
 				6003F5A7195388D20070C39A /* BBAViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				5E0F5846224DFFF10097F08C /* BBAPainterLayout.m in Sources */,
 				5E32795022425ED200F474E9 /* BBAPainterTransactionGroup.m in Sources */,
 				5E39AB832248FDDB0085DC68 /* BBAPainterAsyncViewController.m in Sources */,
 				5E30B382223B7A7800B01A9F /* BBAPainterTransaction.m in Sources */,
