@@ -31,6 +31,8 @@
 		5E710AE22237DB7300A174BD /* feed.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E710AE12237DB7300A174BD /* feed.json */; };
 		5E75677F221A86BF0084610E /* BBAPainterHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75677E221A86BF0084610E /* BBAPainterHomeViewController.m */; };
 		5E756782221A89B10084610E /* BBAPainterRecommendContenrView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E756781221A89B10084610E /* BBAPainterRecommendContenrView.m */; };
+		5E7749172251BD12002934B2 /* BBAPainterImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7749162251BD12002934B2 /* BBAPainterImageView+WebCache.m */; };
+		5E77491A2251BEE9002934B2 /* SDWebImageManager+Painter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7749192251BEE9002934B2 /* SDWebImageManager+Painter.m */; };
 		5E9BA6DD21DF2D4B00DCE9CA /* BBAPainterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9BA6DB21DF2D4B00DCE9CA /* BBAPainterListViewController.m */; };
 		5E9BA6DF21DF30BB00DCE9CA /* recommend.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E9BA6DE21DF30BA00DCE9CA /* recommend.json */; };
 		5E9BA6E221DF357400DCE9CA /* BBARecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9BA6E121DF357400DCE9CA /* BBARecommendTableViewCell.m */; };
@@ -110,6 +112,10 @@
 		5E75677E221A86BF0084610E /* BBAPainterHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterHomeViewController.m; sourceTree = "<group>"; };
 		5E756780221A89B10084610E /* BBAPainterRecommendContenrView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterRecommendContenrView.h; sourceTree = "<group>"; };
 		5E756781221A89B10084610E /* BBAPainterRecommendContenrView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterRecommendContenrView.m; sourceTree = "<group>"; };
+		5E7749152251BD12002934B2 /* BBAPainterImageView+WebCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BBAPainterImageView+WebCache.h"; sourceTree = "<group>"; };
+		5E7749162251BD12002934B2 /* BBAPainterImageView+WebCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BBAPainterImageView+WebCache.m"; sourceTree = "<group>"; };
+		5E7749182251BEE9002934B2 /* SDWebImageManager+Painter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDWebImageManager+Painter.h"; sourceTree = "<group>"; };
+		5E7749192251BEE9002934B2 /* SDWebImageManager+Painter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SDWebImageManager+Painter.m"; sourceTree = "<group>"; };
 		5E9BA6DA21DF2D4B00DCE9CA /* BBAPainterListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAPainterListViewController.h; sourceTree = "<group>"; };
 		5E9BA6DB21DF2D4B00DCE9CA /* BBAPainterListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAPainterListViewController.m; sourceTree = "<group>"; };
 		5E9BA6DE21DF30BA00DCE9CA /* recommend.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommend.json; sourceTree = "<group>"; };
@@ -203,6 +209,10 @@
 				5EEB6CCB224BB5240047057A /* UIImage+BBAGallop.m */,
 				5E1AA9B22250A46F00FB8225 /* BBAPainterImageView+Display.h */,
 				5E1AA9B32250A46F00FB8225 /* BBAPainterImageView+Display.m */,
+				5E7749152251BD12002934B2 /* BBAPainterImageView+WebCache.h */,
+				5E7749162251BD12002934B2 /* BBAPainterImageView+WebCache.m */,
+				5E7749182251BEE9002934B2 /* SDWebImageManager+Painter.h */,
+				5E7749192251BEE9002934B2 /* SDWebImageManager+Painter.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -597,8 +607,10 @@
 				5E32795322426E8100F474E9 /* BBAPainterAsyncView.m in Sources */,
 				5E30B385223B7AEF00B01A9F /* CALayer+BBAPainterTransaction.m in Sources */,
 				5E39AB86224907580085DC68 /* BBAPainterStorage.m in Sources */,
+				5E7749172251BD12002934B2 /* BBAPainterImageView+WebCache.m in Sources */,
 				5E1AA9B42250A46F00FB8225 /* BBAPainterImageView+Display.m in Sources */,
 				5EFC1FC021F5FF8C00F01D91 /* BBAPainterRecommendModel.m in Sources */,
+				5E77491A2251BEE9002934B2 /* SDWebImageManager+Painter.m in Sources */,
 				5E32794D22423A9C00F474E9 /* BBAPainterUtils.m in Sources */,
 				6003F59E195388D20070C39A /* BBAAppDelegate.m in Sources */,
 				5E3AD63D22320C660011297B /* BBASimpleWebBrowerViewController.m in Sources */,

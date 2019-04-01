@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BBAPainterImageStorage : BBAPainterStorage <NSCoding>
 
 /// 内容（UIImage or NSURL）
-@property (nonatomic, strong, nullable) id contents;
+@property (nonatomic, strong) id contents;
 /// 本地图片的种类，默认是PainterLocalImageDrawInLWAsyncDisplayView
 @property (nonatomic, assign) PainterLocalImageType localImageType;
 /// 占位图
