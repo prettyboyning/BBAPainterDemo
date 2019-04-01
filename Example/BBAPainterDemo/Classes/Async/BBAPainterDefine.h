@@ -9,6 +9,10 @@
 #ifndef BBAPainterDefine_h
 #define BBAPainterDefine_h
 
+@class BBAPainterImageStorage;
 typedef BOOL(^painterAsyncDisplayIsCanclledBlock)(void);
+
+typedef void(^painterImageResizeBlock)(BBAPainterImageStorage *imageStorage, CGFloat delta);
+typedef void(^painterAsyncCompleteBlock)(void);
 
 #endif /* BBAPainterDefine_h */

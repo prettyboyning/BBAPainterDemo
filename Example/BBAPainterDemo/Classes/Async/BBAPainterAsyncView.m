@@ -11,6 +11,8 @@
 #import "BBAPainterUtils.h"
 #import "BBAPainterFlag.h"
 #import "BBAPainterImageView.h"
+#import "BBAPainterImageStorage.h"
+#import "BBAPainterDefine.h"
 
 @interface BBAPainterAsyncView ()
 
@@ -58,18 +60,7 @@
     _displayFlag = [[BBAPainterFlag alloc] init];
 }
 
-#pragma mark - Getter & Setter
-
-- (void)setLayout:(id<painterLayoutProtocol>)layout {
-    if ([_layout isEqual:layout]) {
-        return;
-    }
-    // 清除imageView 缓存
-    [self cleanImageContainersAddReusePool];
-    [self cleanupAndReleaseModelOnSubThread];
-    
-    [self.layer setNeedsDisplay];
-}
+#pragma mark - Private
 
 - (void)cleanImageContainersAddReusePool {
     [self.displayFlag increment];
@@ -93,6 +84,84 @@
         [oldLayout class];
     });
 }
+
+- (void)setImageStoragesResizeBlock:(void(^)(BBAPainterImageStorage *imageStorage, CGFloat delta))ressizeBlock {
+    BBAPainterFlag *flag = self.displayFlag;
+    int32_t value = flag.value;
+    
+    painterAsyncDisplayIsCanclledBlock isCancllBlock = ^ BOOL() {
+        return value != _displayFlag.value;
+    };
+    
+    for (int i = 0; i < self.layout.imageStorages.count; i++) {
+        
+        @autoreleasepool {
+            if (isCancllBlock()) {
+                return;
+            }
+            
+            // 取出imageSorage
+            BBAPainterImageStorage *imageStorage = self.layout.imageStorages[i];
+            if ([imageStorage.contents isKindOfClass:[UIImage class]]) {
+                imageStorage.localImageType = PainterLocalImageDrawInLWAsyncDisplayView;
+                continue;
+            }
+            
+            BBAPainterImageView *container = [self dequeueReusableImageContainerWithIdentifier:imageStorage.identifier];
+            if (!container) {
+                container = [[BBAPainterImageView alloc] init];
+                container.identifier = imageStorage.identifier;
+                [self addSubview:container];
+            }
+            container.displayAsynchronously = self.displaysAsynchronously;
+            container.backgroundColor = imageStorage.backgroundColor;
+            container.clipsToBounds = imageStorage.clipsToBounds;
+            container.contentMode = imageStorage.contentMode;
+            container.frame = imageStorage.frame;
+            container.layer.shadowColor = imageStorage.shadowColor.CGColor;
+            container.layer.shadowOffset = imageStorage.shadowOffset;
+            container.layer.shadowOpacity = imageStorage.shadowOpacity;
+            container.layer.shadowRadius = imageStorage.shadowRadius;
+            container.hidden = NO;
+            
+            
+            [self.imageContainers addObject:container];
+            
+        }
+    }
+}
+
+
+- (BBAPainterImageView *)dequeueReusableImageContainerWithIdentifier:(NSString *)identifier {
+    if (self.reusePool.count > 0) {
+        for (int i = 0; i < self.reusePool.count; i++) {
+            BBAPainterImageView *currentImageView = self.reusePool[i];
+            if ([currentImageView.identifier isEqualToString:identifier]) {
+                [self.reusePool removeObject:currentImageView];
+                return currentImageView;
+            }
+        }
+    }
+    return nil;
+}
+
+#pragma mark - Getter & Setter
+
+- (void)setLayout:(id<painterLayoutProtocol>)layout {
+    if ([_layout isEqual:layout]) {
+        return;
+    }
+    // 清除imageView 缓存
+    [self cleanImageContainersAddReusePool];
+    [self cleanupAndReleaseModelOnSubThread];
+    
+    [self.layer setNeedsDisplay];
+    
+    [self setImageStoragesResizeBlock:^(BBAPainterImageStorage *imageStorage, CGFloat delta) {
+        
+    }];
+}
+
 
 + (Class)layerClass {
     return [BBAPainterAsyncLayer class];
