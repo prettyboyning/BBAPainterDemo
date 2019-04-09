@@ -63,66 +63,6 @@ static NSHashTable* allGIFImagesWeak;
 @implementation BBAPainterGifImage
 
 
-#pragma mark - Sette & Getter
-
-- (NSMutableDictionary *)cachedFramesForIndexes {
-    if (_cachedFramesForIndexes) {
-        return _cachedFramesForIndexes;
-    }
-    _cachedFramesForIndexes = [[NSMutableDictionary alloc] init];
-    return _cachedFramesForIndexes;
-}
-
-- (NSMutableIndexSet *)cachedFrameIndexes {
-    if (_cachedFrameIndexes) {
-        return _cachedFrameIndexes;
-    }
-    _cachedFrameIndexes = [[NSMutableIndexSet alloc] init];
-    return _cachedFrameIndexes;
-}
-
-
-- (NSMutableIndexSet *)requestedFrameIndexes {
-    if (_requestedFrameIndexes) {
-        return _requestedFrameIndexes;
-    }
-    _requestedFrameIndexes = [[NSMutableIndexSet alloc] init];
-    return _requestedFrameIndexes;
-}
-
-- (NSUInteger)frameCacheSizeCurrent {
-    NSUInteger frameCacheSizeCurrent = self.frameCacheSizeOptimal;
-    if (self.frameCacheSizeMax > LWGIFImageFrameCacheSizeNoLimit) {
-        frameCacheSizeCurrent = MIN(frameCacheSizeCurrent, self.frameCacheSizeMax);
-    }
-    if (self.frameCacheSizeMaxInternal > LWGIFImageFrameCacheSizeNoLimit) {
-        frameCacheSizeCurrent = MIN(frameCacheSizeCurrent, self.frameCacheSizeMaxInternal);
-    }
-    return frameCacheSizeCurrent;
-}
-
-
-- (void)setFrameCacheSizeMax:(NSUInteger)frameCacheSizeMax {
-    if (_frameCacheSizeMax != frameCacheSizeMax) {
-        BOOL willFrameCacheSizeShrink = (frameCacheSizeMax < self.frameCacheSizeCurrent);
-        _frameCacheSizeMax = frameCacheSizeMax;
-        if (willFrameCacheSizeShrink) {
-            [self purgeFrameCacheIfNeeded];
-        }
-    }
-}
-
-
-- (void)setFrameCacheSizeMaxInternal:(NSUInteger)frameCacheSizeMaxInternal {
-    if (_frameCacheSizeMaxInternal != frameCacheSizeMaxInternal) {
-        BOOL willFrameCacheSizeShrink = (frameCacheSizeMaxInternal < self.frameCacheSizeCurrent);
-        _frameCacheSizeMaxInternal = frameCacheSizeMaxInternal;
-        if (willFrameCacheSizeShrink) {
-            [self purgeFrameCacheIfNeeded];
-        }
-    }
-}
-
 
 #pragma mark - LifeCycle
 
@@ -474,5 +414,66 @@ static NSHashTable* allGIFImagesWeak;
         [self.weakProxy performSelector:@selector(growFrameCacheSizeAfterMemoryWarning:) withObject:@(LWGIFImageFrameCacheSizeGrowAfterMemoryWarning) afterDelay:kGrowDelay];
     }
 }
+
+#pragma mark - Sette & Getter
+
+- (NSMutableDictionary *)cachedFramesForIndexes {
+    if (_cachedFramesForIndexes) {
+        return _cachedFramesForIndexes;
+    }
+    _cachedFramesForIndexes = [[NSMutableDictionary alloc] init];
+    return _cachedFramesForIndexes;
+}
+
+- (NSMutableIndexSet *)cachedFrameIndexes {
+    if (_cachedFrameIndexes) {
+        return _cachedFrameIndexes;
+    }
+    _cachedFrameIndexes = [[NSMutableIndexSet alloc] init];
+    return _cachedFrameIndexes;
+}
+
+
+- (NSMutableIndexSet *)requestedFrameIndexes {
+    if (_requestedFrameIndexes) {
+        return _requestedFrameIndexes;
+    }
+    _requestedFrameIndexes = [[NSMutableIndexSet alloc] init];
+    return _requestedFrameIndexes;
+}
+
+- (NSUInteger)frameCacheSizeCurrent {
+    NSUInteger frameCacheSizeCurrent = self.frameCacheSizeOptimal;
+    if (self.frameCacheSizeMax > LWGIFImageFrameCacheSizeNoLimit) {
+        frameCacheSizeCurrent = MIN(frameCacheSizeCurrent, self.frameCacheSizeMax);
+    }
+    if (self.frameCacheSizeMaxInternal > LWGIFImageFrameCacheSizeNoLimit) {
+        frameCacheSizeCurrent = MIN(frameCacheSizeCurrent, self.frameCacheSizeMaxInternal);
+    }
+    return frameCacheSizeCurrent;
+}
+
+
+- (void)setFrameCacheSizeMax:(NSUInteger)frameCacheSizeMax {
+    if (_frameCacheSizeMax != frameCacheSizeMax) {
+        BOOL willFrameCacheSizeShrink = (frameCacheSizeMax < self.frameCacheSizeCurrent);
+        _frameCacheSizeMax = frameCacheSizeMax;
+        if (willFrameCacheSizeShrink) {
+            [self purgeFrameCacheIfNeeded];
+        }
+    }
+}
+
+
+- (void)setFrameCacheSizeMaxInternal:(NSUInteger)frameCacheSizeMaxInternal {
+    if (_frameCacheSizeMaxInternal != frameCacheSizeMaxInternal) {
+        BOOL willFrameCacheSizeShrink = (frameCacheSizeMaxInternal < self.frameCacheSizeCurrent);
+        _frameCacheSizeMaxInternal = frameCacheSizeMaxInternal;
+        if (willFrameCacheSizeShrink) {
+            [self purgeFrameCacheIfNeeded];
+        }
+    }
+}
+
 
 @end

@@ -12,8 +12,16 @@
 #import <libkern/OSAtomic.h>
 
 @class BBAPainterImageStorage;
-typedef BOOL(^painterAsyncDisplayIsCanclledBlock)(void);
 
+//通过RGB返回UIColor
+#ifndef RGB
+#define RGB(R,G,B,A) [UIColor colorWithRed:R/255.0f green:G/255.0f blue:B/255.0f alpha:A]
+#endif
+
+static const NSString* kBBAPainterImageProcessorPrefixKey = @"kBBAPainterImageProcessorPrefixKey";
+
+
+typedef BOOL(^painterAsyncDisplayIsCanclledBlock)(void);
 typedef void(^painterImageResizeBlock)(BBAPainterImageStorage *imageStorage, CGFloat delta);
 typedef void(^painterAsyncCompleteBlock)(void);
 typedef void(^painterWebImageDownloaderProgressBlock)(NSInteger receivedSize, NSInteger expectedSize, NSURL *targetURL);

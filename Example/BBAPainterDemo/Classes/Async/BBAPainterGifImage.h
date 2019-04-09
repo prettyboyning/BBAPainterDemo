@@ -25,6 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) UIImage* coverImage;
 
 /**
+ *  @brief 构造方法
+ */
+- (id)initWithGIFData:(NSData *)data;
+
+/**
  *  @brief 获取帧索引对应的图片
  *  @param index 位置
  */

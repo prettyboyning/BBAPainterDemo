@@ -94,7 +94,7 @@ static void _croppedImageBackingSizeAndDrawRectInBounds(CGSize sourceImageSize,C
     if ([[url.absoluteString lowercaseString] hasPrefix:@".gif"]) {
         options |= SDWebImageProgressiveDownload;
     }
-    __weak typeof(self) weakSelf = self;
+
     [self painter_asyncSetImageWithURL:url placeholderImage:placeholder cornerRadius:cornerRaiuds cornerBackgroundColor:cornerBgColor borderColor:borderColor borderWidth:borderWidth size:imageSize contentMode:contentMode isBlur:isBlur options:options progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL *targetURL) {
         
     } completed:^(UIImage *image, NSData *imageData, NSError *error) {
@@ -104,8 +104,20 @@ static void _croppedImageBackingSizeAndDrawRectInBounds(CGSize sourceImageSize,C
             }
             return ;
         }
+    
+        // 添加动画
+        if(isFadeShow) {
+            [self.layer removeAnimationForKey:@"fadeshowAnimation"];
+            CATransition *transition = [CATransition animation];
+            transition.duration = 0.15;
+            transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+            transition.type = kCATransitionFade;
+            [self.layer addAnimation:transition forKey:@"fadeshowAnimation"];
+        }
         
-        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if(completion) {
+            completion();
+        }
     }];
 }
 

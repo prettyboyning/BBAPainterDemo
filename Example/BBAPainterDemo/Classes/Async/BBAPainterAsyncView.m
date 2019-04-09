@@ -14,6 +14,8 @@
 #import "BBAPainterImageStorage.h"
 #import "BBAPainterDefine.h"
 
+#import "BBAPainterImageView+Display.h"
+
 @interface BBAPainterAsyncView ()
 
 /// 缓存之前的BBAPainterImageView
@@ -85,6 +87,7 @@
     });
 }
 
+
 - (void)setImageStoragesResizeBlock:(void(^)(BBAPainterImageStorage *imageStorage, CGFloat delta))ressizeBlock {
     BBAPainterFlag *flag = self.displayFlag;
     int32_t value = flag.value;
@@ -124,7 +127,9 @@
             container.layer.shadowRadius = imageStorage.shadowRadius;
             container.hidden = NO;
             
-            
+            [container painterSetImageWihtImageStorage:imageStorage resize:ressizeBlock completion:^{
+                
+            }];
             [self.imageContainers addObject:container];
             
         }
@@ -154,7 +159,7 @@
     // 清除imageView 缓存
     [self cleanImageContainersAddReusePool];
     [self cleanupAndReleaseModelOnSubThread];
-    
+    _layout = layout;
     [self.layer setNeedsDisplay];
     
     [self setImageStoragesResizeBlock:^(BBAPainterImageStorage *imageStorage, CGFloat delta) {

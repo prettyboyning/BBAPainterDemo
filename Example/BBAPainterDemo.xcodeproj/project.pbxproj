@@ -15,6 +15,7 @@
 		5E1AA9B42250A46F00FB8225 /* BBAPainterImageView+Display.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1AA9B32250A46F00FB8225 /* BBAPainterImageView+Display.m */; };
 		5E1C815522435BA200C5BB42 /* BBAPainterGifImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C815422435BA200C5BB42 /* BBAPainterGifImage.m */; };
 		5E1C81582243655900C5BB42 /* BBAPainterProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C81572243655900C5BB42 /* BBAPainterProxy.m */; };
+		5E23049522523D3200A0148B /* SDImageCache+Painter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E23049422523D3200A0148B /* SDImageCache+Painter.m */; };
 		5E30B382223B7A7800B01A9F /* BBAPainterTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E30B381223B7A7800B01A9F /* BBAPainterTransaction.m */; };
 		5E30B385223B7AEF00B01A9F /* CALayer+BBAPainterTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E30B384223B7AEF00B01A9F /* CALayer+BBAPainterTransaction.m */; };
 		5E32794422422E0D00F474E9 /* BBAPainterAsyncLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E32794322422E0D00F474E9 /* BBAPainterAsyncLayer.m */; };
@@ -28,6 +29,7 @@
 		5E39AB86224907580085DC68 /* BBAPainterStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E39AB85224907580085DC68 /* BBAPainterStorage.m */; };
 		5E3AD63D22320C660011297B /* BBASimpleWebBrowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AD63C22320C660011297B /* BBASimpleWebBrowerViewController.m */; };
 		5E3BF5B921DE052B0092435E /* BBAPainterBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3BF5B821DE052B0092435E /* BBAPainterBaseViewController.m */; };
+		5E41FC0122534CC7006C51A6 /* BBAPainterImageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E41FC0022534CC7006C51A6 /* BBAPainterImageProcessor.m */; };
 		5E710AE22237DB7300A174BD /* feed.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E710AE12237DB7300A174BD /* feed.json */; };
 		5E75677F221A86BF0084610E /* BBAPainterHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75677E221A86BF0084610E /* BBAPainterHomeViewController.m */; };
 		5E756782221A89B10084610E /* BBAPainterRecommendContenrView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E756781221A89B10084610E /* BBAPainterRecommendContenrView.m */; };
@@ -37,6 +39,7 @@
 		5E9BA6DF21DF30BB00DCE9CA /* recommend.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E9BA6DE21DF30BA00DCE9CA /* recommend.json */; };
 		5E9BA6E221DF357400DCE9CA /* BBARecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9BA6E121DF357400DCE9CA /* BBARecommendTableViewCell.m */; };
 		5E9BA6E521DF393B00DCE9CA /* BBARecommendViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9BA6E421DF393B00DCE9CA /* BBARecommendViewModel.m */; };
+		5EB5DD132254CA58004B7AC7 /* BBAPainterImageView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5DD122254CA58004B7AC7 /* BBAPainterImageView+WebCacheOperation.m */; };
 		5ED0FFAF21F8994E0083DE5E /* BBAPainterRecommendCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED0FFAE21F8994E0083DE5E /* BBAPainterRecommendCellData.m */; };
 		5EEB6CCC224BB5240047057A /* UIImage+BBAGallop.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB6CCB224BB5240047057A /* UIImage+BBAGallop.m */; };
 		5EFC1FC021F5FF8C00F01D91 /* BBAPainterRecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFC1FBF21F5FF8C00F01D91 /* BBAPainterRecommendModel.m */; };
@@ -81,6 +84,8 @@
 		5E1C815422435BA200C5BB42 /* BBAPainterGifImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterGifImage.m; sourceTree = "<group>"; };
 		5E1C81562243655900C5BB42 /* BBAPainterProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterProxy.h; sourceTree = "<group>"; };
 		5E1C81572243655900C5BB42 /* BBAPainterProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterProxy.m; sourceTree = "<group>"; };
+		5E23049322523D3200A0148B /* SDImageCache+Painter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDImageCache+Painter.h"; sourceTree = "<group>"; };
+		5E23049422523D3200A0148B /* SDImageCache+Painter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SDImageCache+Painter.m"; sourceTree = "<group>"; };
 		5E30B380223B7A7800B01A9F /* BBAPainterTransaction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterTransaction.h; sourceTree = "<group>"; };
 		5E30B381223B7A7800B01A9F /* BBAPainterTransaction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterTransaction.m; sourceTree = "<group>"; };
 		5E30B383223B7AEF00B01A9F /* CALayer+BBAPainterTransaction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+BBAPainterTransaction.h"; sourceTree = "<group>"; };
@@ -107,6 +112,8 @@
 		5E3AD63C22320C660011297B /* BBASimpleWebBrowerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBASimpleWebBrowerViewController.m; sourceTree = "<group>"; };
 		5E3BF5B721DE052B0092435E /* BBAPainterBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterBaseViewController.h; sourceTree = "<group>"; };
 		5E3BF5B821DE052B0092435E /* BBAPainterBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterBaseViewController.m; sourceTree = "<group>"; };
+		5E41FBFF22534CC7006C51A6 /* BBAPainterImageProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterImageProcessor.h; sourceTree = "<group>"; };
+		5E41FC0022534CC7006C51A6 /* BBAPainterImageProcessor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterImageProcessor.m; sourceTree = "<group>"; };
 		5E710AE12237DB7300A174BD /* feed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feed.json; sourceTree = "<group>"; };
 		5E75677D221A86BF0084610E /* BBAPainterHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterHomeViewController.h; sourceTree = "<group>"; };
 		5E75677E221A86BF0084610E /* BBAPainterHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterHomeViewController.m; sourceTree = "<group>"; };
@@ -123,6 +130,8 @@
 		5E9BA6E121DF357400DCE9CA /* BBARecommendTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBARecommendTableViewCell.m; sourceTree = "<group>"; };
 		5E9BA6E321DF393B00DCE9CA /* BBARecommendViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBARecommendViewModel.h; sourceTree = "<group>"; };
 		5E9BA6E421DF393B00DCE9CA /* BBARecommendViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBARecommendViewModel.m; sourceTree = "<group>"; };
+		5EB5DD112254CA58004B7AC7 /* BBAPainterImageView+WebCacheOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BBAPainterImageView+WebCacheOperation.h"; sourceTree = "<group>"; };
+		5EB5DD122254CA58004B7AC7 /* BBAPainterImageView+WebCacheOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BBAPainterImageView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		5ED0FFAD21F8994E0083DE5E /* BBAPainterRecommendCellData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterRecommendCellData.h; sourceTree = "<group>"; };
 		5ED0FFAE21F8994E0083DE5E /* BBAPainterRecommendCellData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterRecommendCellData.m; sourceTree = "<group>"; };
 		5EEB6CC9224BA30E0047057A /* BBAPainterDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterDefine.h; sourceTree = "<group>"; };
@@ -213,6 +222,10 @@
 				5E7749162251BD12002934B2 /* BBAPainterImageView+WebCache.m */,
 				5E7749182251BEE9002934B2 /* SDWebImageManager+Painter.h */,
 				5E7749192251BEE9002934B2 /* SDWebImageManager+Painter.m */,
+				5E23049322523D3200A0148B /* SDImageCache+Painter.h */,
+				5E23049422523D3200A0148B /* SDImageCache+Painter.m */,
+				5EB5DD112254CA58004B7AC7 /* BBAPainterImageView+WebCacheOperation.h */,
+				5EB5DD122254CA58004B7AC7 /* BBAPainterImageView+WebCacheOperation.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -256,6 +269,8 @@
 				5E3897BF224CAAA200AAAE83 /* BBAPainterCGRectTransform.m */,
 				5E0F5844224DFFF10097F08C /* BBAPainterLayout.h */,
 				5E0F5845224DFFF10097F08C /* BBAPainterLayout.m */,
+				5E41FBFF22534CC7006C51A6 /* BBAPainterImageProcessor.h */,
+				5E41FC0022534CC7006C51A6 /* BBAPainterImageProcessor.m */,
 			);
 			path = Async;
 			sourceTree = "<group>";
@@ -615,6 +630,7 @@
 				6003F59E195388D20070C39A /* BBAAppDelegate.m in Sources */,
 				5E3AD63D22320C660011297B /* BBASimpleWebBrowerViewController.m in Sources */,
 				5E9BA6DD21DF2D4B00DCE9CA /* BBAPainterListViewController.m in Sources */,
+				5E41FC0122534CC7006C51A6 /* BBAPainterImageProcessor.m in Sources */,
 				5E1C81582243655900C5BB42 /* BBAPainterProxy.m in Sources */,
 				5E3897C0224CAAA200AAAE83 /* BBAPainterCGRectTransform.m in Sources */,
 				5ED0FFAF21F8994E0083DE5E /* BBAPainterRecommendCellData.m in Sources */,
@@ -622,6 +638,7 @@
 				6003F5A7195388D20070C39A /* BBAViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				5E0F5846224DFFF10097F08C /* BBAPainterLayout.m in Sources */,
+				5EB5DD132254CA58004B7AC7 /* BBAPainterImageView+WebCacheOperation.m in Sources */,
 				5E32795022425ED200F474E9 /* BBAPainterTransactionGroup.m in Sources */,
 				5E39AB832248FDDB0085DC68 /* BBAPainterAsyncViewController.m in Sources */,
 				5E30B382223B7A7800B01A9F /* BBAPainterTransaction.m in Sources */,
@@ -632,6 +649,7 @@
 				5E3BF5B921DE052B0092435E /* BBAPainterBaseViewController.m in Sources */,
 				5E179F1B224A0E3A00D361C7 /* BBAPainterImageStorage.m in Sources */,
 				5E75677F221A86BF0084610E /* BBAPainterHomeViewController.m in Sources */,
+				5E23049522523D3200A0148B /* SDImageCache+Painter.m in Sources */,
 				5EEB6CCC224BB5240047057A /* UIImage+BBAGallop.m in Sources */,
 				5E1C815522435BA200C5BB42 /* BBAPainterGifImage.m in Sources */,
 			);
