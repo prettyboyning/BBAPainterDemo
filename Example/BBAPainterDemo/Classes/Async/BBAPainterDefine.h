@@ -21,7 +21,10 @@
 static const NSString* kBBAPainterImageProcessorPrefixKey = @"kBBAPainterImageProcessorPrefixKey";
 
 
-typedef BOOL(^painterAsyncDisplayIsCanclledBlock)(void);
+typedef BOOL(^painterAsyncDisplayIsCancelledBlock)(void);
+typedef void(^painterLayerDisplayWillDisplayBlock)(CALayer *layer);
+typedef void(^painterLayerDisplayBlock)(CGContextRef context, CGSize size, painterAsyncDisplayIsCancelledBlock isCancellBlock);
+typedef void(^painterLayerDidDisplayBlock)(CALayer *layer, BOOL finished);
 typedef void(^painterImageResizeBlock)(BBAPainterImageStorage *imageStorage, CGFloat delta);
 typedef void(^painterAsyncCompleteBlock)(void);
 typedef void(^painterWebImageDownloaderProgressBlock)(NSInteger receivedSize, NSInteger expectedSize, NSURL *targetURL);

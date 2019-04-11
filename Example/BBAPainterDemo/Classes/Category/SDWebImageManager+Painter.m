@@ -19,6 +19,7 @@
 
 @end
 
+
 @implementation SDWebImageManager (Painter)
 
 @dynamic runningOperations;

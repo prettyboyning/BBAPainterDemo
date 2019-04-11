@@ -16,7 +16,7 @@
 
 #import "BBAPainterImageView+Display.h"
 
-@interface BBAPainterAsyncView ()
+@interface BBAPainterAsyncView () <BBAPainterAsyncDisplayLayerDelegate>
 
 /// 缓存之前的BBAPainterImageView
 @property (nonatomic, strong) NSMutableArray *reusePool;
@@ -92,7 +92,7 @@
     BBAPainterFlag *flag = self.displayFlag;
     int32_t value = flag.value;
     
-    painterAsyncDisplayIsCanclledBlock isCancllBlock = ^ BOOL() {
+    painterAsyncDisplayIsCancelledBlock isCancllBlock = ^ BOOL() {
         return value != _displayFlag.value;
     };
     
@@ -148,6 +148,51 @@
         }
     }
     return nil;
+}
+
+- (void)drawStoragesInContext:(CGContextRef)context cancellBlock:(painterAsyncDisplayIsCancelledBlock)cancellBlock {
+    if ([self.delegate respondsToSelector:@selector(extraAsyncDisplayIncontext:size:isCancelled:)]) {
+        if (cancellBlock()) {
+            return;
+        }
+        [self.delegate extraAsyncDisplayIncontext:context size:self.bounds.size isCancelled:cancellBlock];
+    }
+    
+    for (BBAPainterImageStorage *imageStorage in self.layout.imageStorages) {
+        if (cancellBlock()) {
+            return;
+        }
+        [imageStorage painter_drawInContext:context isCancelled:cancellBlock];
+    }
+}
+
+#pragma mark - BBAPainterAsyncDisplayLayerDelegate
+
+- (BBAPainterAsyncDisplayTransaction *)asyncDisplayTransaction {
+    BBAPainterAsyncDisplayTransaction* transaction = [[BBAPainterAsyncDisplayTransaction alloc] init];
+    transaction.willDisplayBlock = ^(CALayer *layer) {
+        
+//        for (LWTextStorage* textStorage in self.layout.textStorages) {
+//            //先移除之前的附件
+//            [textStorage.textLayout removeAttachmentFromSuperViewOrLayer];
+//        }
+    };
+    
+    transaction.displayBlock = ^(CGContextRef context,
+                                 CGSize size,
+                                 painterAsyncDisplayIsCancelledBlock cancellBlock) {
+        
+        [self drawStoragesInContext:context cancellBlock:cancellBlock];
+    };
+    
+    transaction.didDisplayBlock = ^(CALayer *layer, BOOL finished) {
+        if (!finished) {
+//            for (LWTextStorage* textStorage in self.layout.textStorages) {
+//                [textStorage.textLayout removeAttachmentFromSuperViewOrLayer];
+//            }
+        }
+    };
+    return transaction;
 }
 
 #pragma mark - Getter & Setter

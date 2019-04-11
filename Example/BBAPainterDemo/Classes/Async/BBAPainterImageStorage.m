@@ -114,7 +114,7 @@
     }
 }
 
-- (void)painter_drawInContext:(CGContextRef)context isCancelled:(painterAsyncDisplayIsCanclledBlock)isCancelld {
+- (void)painter_drawInContext:(CGContextRef)context isCancelled:(painterAsyncDisplayIsCancelledBlock)isCancelld {
     
     if (isCancelld()) {
         return;

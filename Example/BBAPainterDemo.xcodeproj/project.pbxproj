@@ -30,6 +30,7 @@
 		5E3AD63D22320C660011297B /* BBASimpleWebBrowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AD63C22320C660011297B /* BBASimpleWebBrowerViewController.m */; };
 		5E3BF5B921DE052B0092435E /* BBAPainterBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3BF5B821DE052B0092435E /* BBAPainterBaseViewController.m */; };
 		5E41FC0122534CC7006C51A6 /* BBAPainterImageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E41FC0022534CC7006C51A6 /* BBAPainterImageProcessor.m */; };
+		5E685F85225E16FF00ECB057 /* BBAAsyncImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E685F84225E16FF00ECB057 /* BBAAsyncImageTableViewCell.m */; };
 		5E710AE22237DB7300A174BD /* feed.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E710AE12237DB7300A174BD /* feed.json */; };
 		5E75677F221A86BF0084610E /* BBAPainterHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75677E221A86BF0084610E /* BBAPainterHomeViewController.m */; };
 		5E756782221A89B10084610E /* BBAPainterRecommendContenrView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E756781221A89B10084610E /* BBAPainterRecommendContenrView.m */; };
@@ -114,6 +115,8 @@
 		5E3BF5B821DE052B0092435E /* BBAPainterBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterBaseViewController.m; sourceTree = "<group>"; };
 		5E41FBFF22534CC7006C51A6 /* BBAPainterImageProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterImageProcessor.h; sourceTree = "<group>"; };
 		5E41FC0022534CC7006C51A6 /* BBAPainterImageProcessor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterImageProcessor.m; sourceTree = "<group>"; };
+		5E685F83225E16FF00ECB057 /* BBAAsyncImageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAAsyncImageTableViewCell.h; sourceTree = "<group>"; };
+		5E685F84225E16FF00ECB057 /* BBAAsyncImageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAAsyncImageTableViewCell.m; sourceTree = "<group>"; };
 		5E710AE12237DB7300A174BD /* feed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feed.json; sourceTree = "<group>"; };
 		5E75677D221A86BF0084610E /* BBAPainterHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterHomeViewController.h; sourceTree = "<group>"; };
 		5E75677E221A86BF0084610E /* BBAPainterHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterHomeViewController.m; sourceTree = "<group>"; };
@@ -290,6 +293,7 @@
 		5E3BF5B521DE04FF0092435E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5E685F82225E16EC00ECB057 /* View */,
 				5E1AA9B12250A44700FB8225 /* Category */,
 				5E0F5843224DC3BC0097F08C /* Image */,
 				5E32794122422D7F00F474E9 /* Async */,
@@ -310,6 +314,15 @@
 				5E75677E221A86BF0084610E /* BBAPainterHomeViewController.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		5E685F82225E16EC00ECB057 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5E685F83225E16FF00ECB057 /* BBAAsyncImageTableViewCell.h */,
+				5E685F84225E16FF00ECB057 /* BBAAsyncImageTableViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5E9BA6D321DF2B9800DCE9CA /* List */ = {
@@ -638,6 +651,7 @@
 				6003F5A7195388D20070C39A /* BBAViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				5E0F5846224DFFF10097F08C /* BBAPainterLayout.m in Sources */,
+				5E685F85225E16FF00ECB057 /* BBAAsyncImageTableViewCell.m in Sources */,
 				5EB5DD132254CA58004B7AC7 /* BBAPainterImageView+WebCacheOperation.m in Sources */,
 				5E32795022425ED200F474E9 /* BBAPainterTransactionGroup.m in Sources */,
 				5E39AB832248FDDB0085DC68 /* BBAPainterAsyncViewController.m in Sources */,

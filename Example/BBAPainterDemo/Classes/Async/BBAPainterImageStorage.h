@@ -50,7 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param context    一个CGContextRef对象，绘制上下文
  *  @param isCancelld 是否取消绘制
  */
-- (void)painter_drawInContext:(CGContextRef)context isCancelled:(painterAsyncDisplayIsCanclledBlock)isCancelld;
+- (void)painter_drawInContext:(CGContextRef)context isCancelled:(painterAsyncDisplayIsCancelledBlock)isCancelld;
 
 /**
  *  @brief 伸缩绘制

@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param size        绘制空间的大小，需要在这个size的范围内绘制
  *  @param isCancelled 是否取消
  */
-- (void)extraAsyncDisplayIncontext:(CGContextRef)context size:(CGSize)size isCancelled:(painterAsyncDisplayIsCanclledBlock)isCancelled;
+- (void)extraAsyncDisplayIncontext:(CGContextRef)context size:(CGSize)size isCancelled:(painterAsyncDisplayIsCancelledBlock)isCancelled;
 
 
 @end

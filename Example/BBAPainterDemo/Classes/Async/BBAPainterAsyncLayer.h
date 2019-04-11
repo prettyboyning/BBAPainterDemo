@@ -7,6 +7,8 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import "BBAPainterDefine.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 @class BBAPainterFlag;
@@ -33,13 +35,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BBAPainterAsyncDisplayTransaction : NSObject
 
 /// 即将开始绘制
-@property (nullable, nonatomic, copy) void (^willDisplayBlock)(CALayer *layer);
+@property (nullable, nonatomic, copy) painterLayerDisplayWillDisplayBlock willDisplayBlock;
 
 /// 绘制的具体实现
-@property (nullable, nonatomic, copy) void (^displayBlock)(CGContextRef context, CGSize size, BOOL(^isCancelled)(void));
+@property (nullable, nonatomic, copy) painterLayerDisplayBlock displayBlock;
 
 /// 绘制已经完成
-@property (nullable, nonatomic, copy) void (^didDisplayBlock)(CALayer *layer, BOOL finished);
+@property (nullable, nonatomic, copy) painterLayerDidDisplayBlock didDisplayBlock;
 
 @end
 
