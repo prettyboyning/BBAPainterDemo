@@ -46,79 +46,85 @@ static char imageURLKey;
     if (url) {
         __weak typeof(self) weakSelf = self;
         id <SDWebImageOperation> opertion = [[SDWebImageManager sharedManager] painter_downloadImageWithURL:url
-                                                                                               cornerRadius:cornerRadius
-                                                                                      cornerBackgroundColor:cornerBackgroundColor
+                                                                                               cornerRadius:cornerRadius cornerBackgroundColor:cornerBackgroundColor
                                                                                                 borderColor:borderColor
-                                                                                                borderWidth:borderWidth size:size
-                                                                                                contentMode:contentMode isBlur:isBlur
+                                                                                                borderWidth:borderWidth
+                                                                                                       size:size
+                                                                                                contentMode:contentMode
+                                                                                                     isBlur:isBlur
                                                                                                     options:options
                                                                                                    progress:progressBlock
                                                                                                   completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
-                                                                                                      __strong typeof(weakSelf) strongSelf = weakSelf;
-                                                                                                      if (!strongSelf || !image) {
-                                                                                                          completedBlock(image, data, error);
-                                                                                                          dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                                                                                                              
-                                                                                                              SDImageFormat imageFormat = [NSData sd_imageFormatForImageData:data];
-                                                                                                              if (imageFormat == SDImageFormatGIF) {
-                                                                                                                  //GIF
-                                                                                                                  BBAPainterGifImage* gif = [[BBAPainterGifImage alloc] initWithGIFData:data];
-                                                                                                                  dispatch_main_async_safe(^{
-                                                                                                                      if (gif && (options & SDWebImageAvoidAutoSetImage) && completedBlock) {
-                                                                                                                          completedBlock(gif, data, error);
-                                                                                                                          return;
-                                                                                                                          
-                                                                                                                      } else if (gif) {
-                                                                                                                          strongSelf.image = nil;
-                                                                                                                          strongSelf.gifImage = gif;
-                                                                                                                          [strongSelf setNeedsLayout];
-                                                                                                                          
-                                                                                                                      } else {
-                                                                                                                          
-                                                                                                                          if ((options & SDWebImageDelayPlaceholder)) {
-                                                                                                                              strongSelf.gifImage = nil;
-                                                                                                                              strongSelf.image = placeholder;
-                                                                                                                              [strongSelf setNeedsLayout];
-                                                                                                                          }
-                                                                                                                      }
-                                                                                                                      
-                                                                                                                      if (completedBlock && finished) {
-                                                                                                                          completedBlock(gif, data, error);
-                                                                                                                      }
-                                                                                                                  });
-                                                                                                                  
-                                                                                                              } else {
-                                                                                                                  // 普通图片
-                                                                                                                  dispatch_main_async_safe(^{
-                                                                                                                      
-                                                                                                                      if (image && (options & SDWebImageAvoidAutoSetImage) && completedBlock) {
-                                                                                                                          completedBlock(image,data,error);
-                                                                                                                          return ;
-                                                                                                                          
-                                                                                                                      } else if (image) {
-                                                                                                                          strongSelf.gifImage = nil;
-                                                                                                                          strongSelf.image = image;
-                                                                                                                          [strongSelf setNeedsLayout];
-                                                                                                                          
-                                                                                                                      } else {
-                                                                                                                          
-                                                                                                                          if ((options & SDWebImageDelayPlaceholder)) {
-                                                                                                                              strongSelf.gifImage = nil;
-                                                                                                                              strongSelf.image = placeholder;
-                                                                                                                              [strongSelf setNeedsLayout];
-                                                                                                                              
-                                                                                                                          }
-                                                                                                                      }
-                                                                                                                      
-                                                                                                                      if (completedBlock && finished) {
-                                                                                                                          completedBlock(image, data, error);
-                                                                                                                      }
-                                                                                                                  });
-                                                                                                              }
-                                                                                                          });
-                                                                                                      }
+                    __strong typeof(weakSelf) strongSelf = weakSelf;
+                    if (!strongSelf || !image) {
+                    completedBlock(image, data, error);
+                        return ;
+                    }
+                    
+                  dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                    
+                      SDImageFormat imageFormat = [NSData sd_imageFormatForImageData:data];
+                      if (imageFormat == SDImageFormatGIF) {
+                          //GIF
+                          BBAPainterGifImage* gif = [[BBAPainterGifImage alloc] initWithGIFData:data];
+                          dispatch_main_async_safe(^{
+                              if (gif && (options & SDWebImageAvoidAutoSetImage) && completedBlock) {
+                                  completedBlock(gif, data, error);
+                                  return;
+
+                              } else if (gif) {
+                                  strongSelf.image = nil;
+                                  strongSelf.gifImage = gif;
+                                  [strongSelf setNeedsLayout];
+
+                              } else {
+
+                                  if ((options & SDWebImageDelayPlaceholder)) {
+                                      strongSelf.gifImage = nil;
+                                      strongSelf.image = placeholder;
+                                      [strongSelf setNeedsLayout];
+                                  }
+                              }
+
+                              if (completedBlock && finished) {
+                                  completedBlock(gif, data, error);
+                              }
+                          });
+                      
+                      } else {
+        //                   普通图片
+                          dispatch_main_async_safe(^{
+
+                              if (image && (options & SDWebImageAvoidAutoSetImage) && completedBlock) {
+                                  completedBlock(image,data,error);
+                                  return ;
+
+                              } else if (image) {
+                                  strongSelf.gifImage = nil;
+                                  strongSelf.image = image;
+                                  [strongSelf setNeedsLayout];
+
+                              } else {
+
+                                  if ((options & SDWebImageDelayPlaceholder)) {
+                                      strongSelf.gifImage = nil;
+                                      strongSelf.image = placeholder;
+                                      [strongSelf setNeedsLayout];
+
+                                  }
+                              }
+
+                              if (completedBlock && finished) {
+                                  completedBlock(image, data, error);
+                              }
+                          });
+                      }
+                  });
         }];
         
+        
+        //把operation设置到LWAsyncImageView的关联对象operationDictionary上，用于取消操作
+        [self painter_setImageLoadOperationWithKey:opertion for:PainterAsyncImageVeiewLoadKey];
     } else {
         dispatch_main_async_safe(^{
             NSError* error = [NSError errorWithDomain:SDWebImageErrorDomain

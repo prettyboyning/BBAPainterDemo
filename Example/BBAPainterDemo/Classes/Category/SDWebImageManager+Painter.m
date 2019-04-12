@@ -11,11 +11,12 @@
 #import "BBAPainterDefine.h"
 #import <objc/message.h>
 
-@interface SDWebImageCombinedOperation : NSObject <SDWebImageOperation>
+@interface SDWebImagePainterCombinedOperation : NSObject <SDWebImageOperation>
 
-@property (nonatomic, assign, getter = isCancelled) BOOL cancelled;
-@property (nonatomic, copy) SDWebImageNoParamsBlock cancelBlock;
-@property (nonatomic, strong) NSOperation* cacheOperation;
+@property (assign, nonatomic, getter = isCancelled) BOOL cancelled;
+@property (strong, nonatomic, nullable) SDWebImageDownloadToken *downloadToken;
+@property (strong, nonatomic, nullable) NSOperation *cacheOperation;
+@property (weak, nonatomic, nullable) SDWebImageManager *manager;
 
 @end
 
@@ -52,8 +53,8 @@
                                                  options:(SDWebImageOptions)options
                                                 progress:(SDWebImageDownloaderProgressBlock)progressBlock
                                                completed:(SDInternalCompletionBlock)completedBlock {
-    __block SDWebImageCombinedOperation *operation = [SDWebImageCombinedOperation new];
-    __weak SDWebImageCombinedOperation *weakOperation = operation;
+    __block SDWebImagePainterCombinedOperation *operation = [SDWebImagePainterCombinedOperation new];
+    __weak SDWebImagePainterCombinedOperation *weakOperation = operation;
     
     if ([url isKindOfClass:NSString.class]) {
         url = [NSURL URLWithString:(NSString *)url];
@@ -97,6 +98,7 @@
     
     // 先从缓存中查找，先内存后硬盘
     operation.cacheOperation = [self.imageCache queryCacheOperationForKey:key done:^(UIImage * _Nullable cacheImage, NSData * _Nullable cacheData, SDImageCacheType cacheType) {
+        __strong __typeof(weakOperation) strongOperation = weakOperation;
         // 如果取消了，从下载列表队列中移除
         if (operation.isCancelled) {
             [self painter_safeLyRemoveOperationFromRunning:operation];
@@ -131,9 +133,9 @@
                 downloaderOptions &= ~SDWebImageDownloaderProgressiveDownload;
                 downloaderOptions |= SDWebImageDownloaderIgnoreCachedResponse;
             }
-            
-            SDWebImageDownloadToken *subOperationToken = [self.imageDownloader downloadImageWithURL:url options:downloaderOptions progress:progressBlock completed:^(UIImage * _Nullable downloadImage, NSData * _Nullable downloadData, NSError * _Nullable error, BOOL finished) {
-                __strong typeof(weakOperation) strongOperation = weakOperation;
+            __weak typeof(strongOperation) weakSubOperation = strongOperation;
+            strongOperation.downloadToken = [self.imageDownloader downloadImageWithURL:url options:downloaderOptions progress:progressBlock completed:^(UIImage * _Nullable downloadImage, NSData * _Nullable downloadData, NSError * _Nullable error, BOOL finished) {
+                __strong typeof(weakSubOperation) strongOperation = weakSubOperation;
                 if (!strongOperation || strongOperation.isCancelled) {
                     
                 } else if (error) {
@@ -167,7 +169,7 @@
                                     [self.imageCache storeImage:downloadImage imageData:(transformedImage ? nil : downloadData) forKey:key toDisk:cacheOnDisk completion:nil];
                                 }
                                 
-                                [self painter_callCompletionBlockForOperation:strongOperation completion:completedBlock image:downloadImage data:downloadData error:nil cacheType:SDImageCacheTypeNone finished:finished   url:url];
+                                [self painter_callCompletionBlockForOperation:strongOperation completion:completedBlock image:downloadImage data:downloadData error:nil cacheType:SDImageCacheTypeNone finished:finished url:url];
                             });
                         } else {
                             if (downloadImage && finished) {
@@ -203,11 +205,11 @@
                     [self painter_safeLyRemoveOperationFromRunning:strongOperation];
                 }
             }];
-            operation.cancelBlock = ^{
-                [self.imageDownloader cancel:subOperationToken];
-                __strong __typeof(weakOperation) strongOperation = weakOperation;
-                [self painter_safeLyRemoveOperationFromRunning:strongOperation];
-            };
+//            operation.cancelBlock = ^{
+//                [self.imageDownloader cancel:subOperationToken];
+//                __strong __typeof(weakOperation) strongOperation = weakOperation;
+//                [self painter_safeLyRemoveOperationFromRunning:strongOperation];
+//            };
         } else if (cacheImage) {
             __strong __typeof(weakOperation) strongOperation = weakOperation;
             [self painter_callCompletionBlockForOperation:strongOperation completion:completedBlock image:cacheImage data:cacheData error:nil cacheType:cacheType finished:YES url:url];
@@ -222,7 +224,7 @@
     return operation;
 }
 
-- (void)painter_callCompletionBlockForOperation:(nullable SDWebImageCombinedOperation *)operation
+- (void)painter_callCompletionBlockForOperation:(nullable SDWebImagePainterCombinedOperation *)operation
                                      completion:(nullable SDInternalCompletionBlock)completionBlock
                                           error:(nullable NSError *)error
                                             url:(nullable NSURL *)url {
@@ -235,7 +237,7 @@
                                               url:url];
 }
 
-- (void)painter_callCompletionBlockForOperation:(nullable SDWebImageCombinedOperation *)operation
+- (void)painter_callCompletionBlockForOperation:(nullable SDWebImagePainterCombinedOperation *)operation
                                      completion:(nullable SDInternalCompletionBlock)completionBlock
                                           image:(nullable UIImage *)image
                                            data:(nullable NSData *)data
@@ -243,14 +245,20 @@
                                       cacheType:(SDImageCacheType)cacheType
                                        finished:(BOOL)finished
                                             url:(nullable NSURL *)url {
-    dispatch_main_async_safe(^{
+//    dispatch_main_async_safe(^{
+//        if (operation && !operation.isCancelled && completionBlock) {
+//            completionBlock(image, data, error, cacheType, finished, url);
+//        }
+//    });
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
         if (operation && !operation.isCancelled && completionBlock) {
             completionBlock(image, data, error, cacheType, finished, url);
         }
     });
 }
 
-- (void)painter_safeLyRemoveOperationFromRunning:(SDWebImageCombinedOperation *)operation {
+- (void)painter_safeLyRemoveOperationFromRunning:(SDWebImagePainterCombinedOperation *)operation {
     @synchronized (self.runningOperations) {
         if (operation) {
             if ([self.runningOperations containsObject:operation]) {
@@ -261,3 +269,22 @@
 }
 
 @end
+
+@implementation SDWebImagePainterCombinedOperation
+
+- (void)cancel {
+    @synchronized(self) {
+        self.cancelled = YES;
+        if (self.cacheOperation) {
+            [self.cacheOperation cancel];
+            self.cacheOperation = nil;
+        }
+        if (self.downloadToken) {
+            [self.manager.imageDownloader cancel:self.downloadToken];
+        }
+        [self.manager painter_safeLyRemoveOperationFromRunning:self];
+    }
+}
+
+@end
+

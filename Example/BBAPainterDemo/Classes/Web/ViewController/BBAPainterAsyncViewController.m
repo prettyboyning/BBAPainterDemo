@@ -80,6 +80,58 @@
         [layout addStorage:imageStorage];
         [_dataSource addObject:layout];
     }
+    {
+        BBAPainterImageStorage* imageStorage = [[BBAPainterImageStorage alloc] init];
+        imageStorage.contentMode = UIViewContentModeScaleAspectFill;
+        imageStorage.frame = CGRectMake(self.view.bounds.size.width/2 + 15.0f, 15.0f, self.view.bounds.size.width/2 - 30.0f, 100.0f);
+        imageStorage.contents = [NSURL URLWithString:@"https://b.bdstatic.com/searchbox/mappconsole/image/20180820/1534727783204376.png"];
+        imageStorage.clipsToBounds = YES;
+        
+        
+        BBAPainterLayout* layout = [[BBAPainterLayout alloc] init];
+        [layout addStorage:imageStorage];
+        [_dataSource addObject:layout];
+    }
+    
+    {
+        BBAPainterImageStorage* imageStorage = [[BBAPainterImageStorage alloc] init];
+        imageStorage.contentMode = UIViewContentModeScaleAspectFill;
+        imageStorage.frame = CGRectMake(self.view.bounds.size.width/2 + 15.0f, 15.0f, self.view.bounds.size.width/2 - 30.0f, 100.0f);
+        imageStorage.contents = [NSURL URLWithString:@"https://b.bdstatic.com/searchbox/mappconsole/image/20180712/1531376287148763.png"];
+        imageStorage.clipsToBounds = YES;
+        
+        
+        BBAPainterLayout* layout = [[BBAPainterLayout alloc] init];
+        [layout addStorage:imageStorage];
+        [_dataSource addObject:layout];
+    }
+    
+    {
+        BBAPainterImageStorage* imageStorage = [[BBAPainterImageStorage alloc] init];
+        imageStorage.contentMode = UIViewContentModeScaleAspectFill;
+        imageStorage.frame = CGRectMake(self.view.bounds.size.width/2 + 15.0f, 15.0f, self.view.bounds.size.width/2 - 30.0f, 100.0f);
+        imageStorage.contents = [NSURL URLWithString:@"https://b.bdstatic.com/searchbox/mappconsole/image/20180820/1534727783204376.png"];
+        imageStorage.clipsToBounds = YES;
+        
+        
+        BBAPainterLayout* layout = [[BBAPainterLayout alloc] init];
+        [layout addStorage:imageStorage];
+        [_dataSource addObject:layout];
+    }
+    
+    {
+        BBAPainterImageStorage* imageStorage = [[BBAPainterImageStorage alloc] init];
+        imageStorage.contentMode = UIViewContentModeScaleAspectFill;
+        imageStorage.frame = CGRectMake(self.view.bounds.size.width/2 + 15.0f, 15.0f, self.view.bounds.size.width/2 - 30.0f, 100.0f);
+        imageStorage.contents = [NSURL URLWithString:@"https://b.bdstatic.com/searchbox/mappconsole/image/20180712/1531376287148763.png"];
+        imageStorage.clipsToBounds = YES;
+        
+        
+        BBAPainterLayout* layout = [[BBAPainterLayout alloc] init];
+        [layout addStorage:imageStorage];
+        [_dataSource addObject:layout];
+    }
+    
     return _dataSource;
 }
 

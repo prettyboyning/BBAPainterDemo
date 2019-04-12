@@ -24,7 +24,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = [UIColor whiteColor];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.displayView = [[BBAPainterAsyncView alloc] initWithFrame:CGRectZero];
         [self.contentView addSubview:self.displayView];
