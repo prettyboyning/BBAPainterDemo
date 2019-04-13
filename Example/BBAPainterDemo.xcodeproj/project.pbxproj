@@ -36,6 +36,7 @@
 		5E756782221A89B10084610E /* BBAPainterRecommendContenrView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E756781221A89B10084610E /* BBAPainterRecommendContenrView.m */; };
 		5E7749172251BD12002934B2 /* BBAPainterImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7749162251BD12002934B2 /* BBAPainterImageView+WebCache.m */; };
 		5E77491A2251BEE9002934B2 /* SDWebImageManager+Painter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7749192251BEE9002934B2 /* SDWebImageManager+Painter.m */; };
+		5E8EC1F32261FEDA00289022 /* BBAPainterListLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8EC1F22261FEDA00289022 /* BBAPainterListLayout.m */; };
 		5E9BA6DD21DF2D4B00DCE9CA /* BBAPainterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9BA6DB21DF2D4B00DCE9CA /* BBAPainterListViewController.m */; };
 		5E9BA6DF21DF30BB00DCE9CA /* recommend.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E9BA6DE21DF30BA00DCE9CA /* recommend.json */; };
 		5E9BA6E221DF357400DCE9CA /* BBARecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9BA6E121DF357400DCE9CA /* BBARecommendTableViewCell.m */; };
@@ -126,6 +127,8 @@
 		5E7749162251BD12002934B2 /* BBAPainterImageView+WebCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BBAPainterImageView+WebCache.m"; sourceTree = "<group>"; };
 		5E7749182251BEE9002934B2 /* SDWebImageManager+Painter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDWebImageManager+Painter.h"; sourceTree = "<group>"; };
 		5E7749192251BEE9002934B2 /* SDWebImageManager+Painter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SDWebImageManager+Painter.m"; sourceTree = "<group>"; };
+		5E8EC1F12261FEDA00289022 /* BBAPainterListLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAPainterListLayout.h; sourceTree = "<group>"; };
+		5E8EC1F22261FEDA00289022 /* BBAPainterListLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAPainterListLayout.m; sourceTree = "<group>"; };
 		5E9BA6DA21DF2D4B00DCE9CA /* BBAPainterListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAPainterListViewController.h; sourceTree = "<group>"; };
 		5E9BA6DB21DF2D4B00DCE9CA /* BBAPainterListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAPainterListViewController.m; sourceTree = "<group>"; };
 		5E9BA6DE21DF30BA00DCE9CA /* recommend.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommend.json; sourceTree = "<group>"; };
@@ -321,6 +324,8 @@
 			children = (
 				5E685F83225E16FF00ECB057 /* BBAAsyncImageTableViewCell.h */,
 				5E685F84225E16FF00ECB057 /* BBAAsyncImageTableViewCell.m */,
+				5E8EC1F12261FEDA00289022 /* BBAPainterListLayout.h */,
+				5E8EC1F22261FEDA00289022 /* BBAPainterListLayout.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -666,6 +671,7 @@
 				5E23049522523D3200A0148B /* SDImageCache+Painter.m in Sources */,
 				5EEB6CCC224BB5240047057A /* UIImage+BBAGallop.m in Sources */,
 				5E1C815522435BA200C5BB42 /* BBAPainterGifImage.m in Sources */,
+				5E8EC1F32261FEDA00289022 /* BBAPainterListLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

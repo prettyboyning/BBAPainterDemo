@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BBAPainterLayout.h"
+#import "BBAPainterListLayout.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BBAAsyncImageTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) BBAPainterLayout *layout;
+@property (nonatomic, strong) BBAPainterListLayout *layout;
 
 @end
 
