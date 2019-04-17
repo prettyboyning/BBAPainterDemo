@@ -46,9 +46,10 @@
 //        imageStorage.backgroundColor = [UIColor grayColor];
         imageStorage.contentMode = UIViewContentModeScaleAspectFill;
         imageStorage.frame = CGRectMake(0, 0, 54, 54);
-//        imageStorage.cornerRadius = 2;
-//        imageStorage.cornerBorderColor = [UIColor grayColor];
-//        imageStorage.cornerBorderWidth = 0.3;
+        imageStorage.cornerRadius = 27;
+        imageStorage.cornerBorderColor = [UIColor grayColor];
+        imageStorage.cornerBorderWidth = 0.3;
+//        imageStorage.userInteractionEnabled = NO;
         
         BBAPainterListLayout* layout = [[BBAPainterListLayout alloc] init];
         layout.name = model.name;
@@ -74,12 +75,16 @@
     }
     BBAPainterListLayout* layout = [self.dataSource objectAtIndex:indexPath.row];
     cell.layout = layout;
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 80;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (UITableView *)tableView {

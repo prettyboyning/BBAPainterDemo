@@ -101,7 +101,7 @@
 
 + (UIImage *)painter_cornerRadiusImageWithImage:(UIImage*)image withKey:(NSString *)key {
     if (key && [key hasPrefix:[NSString stringWithFormat:@"%@", kBBAPainterImageProcessorPrefixKey]]) {
-        NSString *infoString = [key substringToIndex:kBBAPainterImageProcessorPrefixKey.length];
+        NSString *infoString = [key substringFromIndex:kBBAPainterImageProcessorPrefixKey.length];
         NSArray *arr = [infoString componentsSeparatedByString:@","];
         CGFloat w;
         CGFloat h;
