@@ -32,11 +32,11 @@
     if (self) {
         
         self.backgroundColor = [UIColor whiteColor];
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
+//        self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.displayView = [[BBAPainterAsyncView alloc] initWithFrame:CGRectMake(17, 14, 54, 54)];
         [self.contentView addSubview:self.displayView];
-//        self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.contentView.bounds];
-//        self.selectedBackgroundView.backgroundColor = [UIColor grayColor];
+        self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.contentView.bounds];
+        self.selectedBackgroundView.backgroundColor = [UIColor grayColor];
         self.titleLabel.frame = CGRectMake(84, 21, self.contentView.bounds.size.width - 100, 18);
         self.subTitleLabel.frame = CGRectMake(84, 45, self.contentView.bounds.size.width - 100, 18);
         self.seperatorLine.frame = CGRectMake(16, self.contentView.bounds.size.height - 1, self.contentView.bounds.size.width - 100, 1);
@@ -61,6 +61,20 @@
         self.displayView.layout = self.layout;
         self.titleLabel.text = _layout.name;
         self.subTitleLabel.text = _layout.itemDescription;
+    }
+}
+
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+    [super setHighlighted:highlighted animated:animated];
+    if (highlighted) {
+        // Recover backgroundColor of subviews.
+    }
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    if (selected) {
+        // Recover backgroundColor of subviews.
     }
 }
 
