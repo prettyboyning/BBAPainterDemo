@@ -42,7 +42,8 @@
         [model setValueWithDict:obj];
         
         BBAPainterImageStorage* imageStorage = [[BBAPainterImageStorage alloc] init];
-        imageStorage.contents = [NSURL URLWithString:model.icon];
+        imageStorage.contents = [NSURL URLWithString:@"sdgh"];
+        imageStorage.placeholder = [UIImage imageNamed:@"123"];
 //        imageStorage.backgroundColor = [UIColor grayColor];
         imageStorage.contentMode = UIViewContentModeScaleAspectFill;
         imageStorage.frame = CGRectMake(0, 0, 54, 54);
@@ -58,6 +59,22 @@
         [self.dataSource addObject:layout];
         
     }];
+    
+    BBAPainterImageStorage* imageStorage = [[BBAPainterImageStorage alloc] init];
+    imageStorage.contents = [UIImage imageNamed:@"123"];
+    //        imageStorage.backgroundColor = [UIColor grayColor];
+    imageStorage.contentMode = UIViewContentModeScaleAspectFill;
+    imageStorage.frame = CGRectMake(0, 0, 54, 54);
+    imageStorage.cornerRadius = 27;
+    imageStorage.cornerBorderColor = [UIColor grayColor];
+    imageStorage.cornerBorderWidth = 0.3;
+    //        imageStorage.userInteractionEnabled = NO;
+    
+    BBAPainterListLayout* layout = [[BBAPainterListLayout alloc] init];
+    layout.name = @"wewh";
+    layout.itemDescription = @"wewh";
+    [layout addStorage:imageStorage];
+    [self.dataSource addObject:layout];
     
     [self.tableView reloadData];
 }
